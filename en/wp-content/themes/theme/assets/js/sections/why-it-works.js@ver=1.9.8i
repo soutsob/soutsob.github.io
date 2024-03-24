@@ -1,0 +1,80 @@
+//why slider
+
+jQuery(function ($) {
+
+
+    let $WhySlider = $('#why-slider');
+
+    if ($WhySlider.length) {
+
+        let $WhyArrows = $('#why-slider-arrows');
+        var $line = $('#why-it-works').find('.line');
+
+        $line.css("width",  $('.section-why__pag.active').width()+"px");
+        $line.css("left",  $('.section-why__pag.active').position().left+"px");
+
+        $WhySlider.slick({
+            infinite: false,
+            fade: false,
+            dots: false,
+            arrows: false,
+            draggable: false,
+            waitForAnimate: false,
+            responsive: [
+                {
+                    breakpoint: 630,
+                    settings: {
+                        draggable: true,
+                        dots: true
+                    }
+                }
+                ]
+        });
+
+        let sliderCount = $WhySlider.slick('getSlick').slideCount;
+
+        $WhyArrows.find('.next-arrow').on('click', function () {
+            let current_slide = $('.section-why__pag.active').data('slide') + 1;
+            if (current_slide > sliderCount) {
+                current_slide = 1;
+            }
+            $('.section-why__pag').removeClass("active");
+            $('a[data-slide=' + current_slide + ']').addClass("active");
+
+            $line.css("width",  $('.section-why__pag.active').width()+"px");
+            $line.css("left",  $('.section-why__pag.active').position().left+"px");
+
+            $WhySlider.slick('slickNext');
+        });
+
+        $WhyArrows.find('.prev-arrow').on('click', function () {
+            let current_slide = $('.section-why__pag.active').data('slide') - 1;
+            if (current_slide < 1) {
+                current_slide = sliderCount;
+            }
+            $('.section-why__pag').removeClass("active");
+            $('a[data-slide=' + current_slide + ']').addClass("active");
+
+            $line.css("width",  $('.section-why__pag.active').width()+"px");
+            $line.css("left",  $('.section-why__pag.active').position().left+"px");
+
+            $WhySlider.slick('slickPrev');
+        });
+
+        $('a[data-slide]').click(function () {
+            $('.section-why__pag').removeClass("active");
+            $(this).addClass("active");
+            let slideno = $(this).data('slide');
+            $line.css("width", $(this).width()+"px");
+            $line.css("left", $(this).position().left+"px");
+            $WhySlider.slick('slickGoTo', slideno - 1);
+        }); 
+
+
+        $(window).on('orientationchange resize', function () {
+            $line.css("width",  $('.section-why__pag.active').width()+"px");
+            $line.css("left",  $('.section-why__pag.active').position().left+"px");
+        });
+
+    }
+})

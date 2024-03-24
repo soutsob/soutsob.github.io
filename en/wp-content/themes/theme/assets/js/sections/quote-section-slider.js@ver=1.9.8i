@@ -1,0 +1,24 @@
+let $quoteSection = $(document.getElementsByClassName('quote-section-slider'));
+if ($quoteSection.length) {
+    let quoteSlider_slides = $quoteSection.find('.testimonial-block').length;
+
+    let $quoteSlider =  $quoteSection.find('.testimonials');
+
+    if (quoteSlider_slides > 1 ) {
+        $quoteSlider.not(document.getElementsByClassName('slick-initialized')).slick({
+            infinite: false,
+            dots: true,
+            arrows: false,
+            speed: 800,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            mobileFirst: true,
+            adaptiveHeight: true,
+            fade: true,
+            responsive: [],
+        });
+
+        window.addEventListener('resize', function(e){$quoteSlider.slick('resize')});
+    }
+
+}

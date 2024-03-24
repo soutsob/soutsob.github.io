@@ -1,0 +1,1 @@
+jQuery(function(e){e(".menu-accordion__toggle").click(function(){let n=e(this).parent().parent().find(".menu-accordion__body");e(this).toggleClass("active"),e(n).slideToggle()})});

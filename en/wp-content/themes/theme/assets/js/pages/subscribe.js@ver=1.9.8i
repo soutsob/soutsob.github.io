@@ -1,0 +1,6 @@
+jQuery(document).ready(function( $ ) {
+    $('.post-subscribe__form-content').click(function(){
+        $(this).parent().find('.recapcha-subscribe').fadeIn();
+    });
+
+});

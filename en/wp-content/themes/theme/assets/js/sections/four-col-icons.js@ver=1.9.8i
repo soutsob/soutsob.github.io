@@ -1,0 +1,26 @@
+jQuery(document).ready(function () {
+    sameHeight('.four-col-icons .title');
+    sameHeight('.four-col-icons .icons');
+
+    jQuery(window).resize(function() {
+        sameHeight('.four-col-icons .title');
+        sameHeight('.four-col-icons .icons');
+    });
+});
+
+
+function sameHeight(item) {
+    var x = 0;
+    $=jQuery;
+    $(item).height('auto');
+
+    var $containerWidth = $(window).width();
+    if ($containerWidth > 612) {
+        $(item).each(function (id, it) {
+            if ($(it).height() > x) {
+                x = $(it).height();
+            }
+        })
+            .height(x);
+    }
+}

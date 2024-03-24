@@ -1,0 +1,13 @@
+jQuery(function ($) {
+    let $previewSlider = $('.gallery .images');
+
+    if($previewSlider.length){
+
+        $previewSlider.slickLightbox({
+            src: 'href',
+            itemSelector: 'a',
+            background: 'rgba(0, 0, 0, .7)',
+            navigateByKeyboard  : true,
+        });
+    }
+});

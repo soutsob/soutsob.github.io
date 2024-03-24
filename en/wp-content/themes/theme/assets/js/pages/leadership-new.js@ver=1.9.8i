@@ -1,0 +1,39 @@
+const mdBreakpoint = 660;
+
+jQuery(($) => {
+  document
+    .querySelectorAll(".founders .outter .leaders__photo")
+    .forEach((item) => {
+      $(item).on("click", (e) => {
+        const inner = $(item).parents(".leaders__item").find(".leaders__inner");
+
+        if (window.innerWidth >= mdBreakpoint) {
+          $.magnificPopup.open({
+            closeMarkup:
+              '<button title="%title%" type="button" class="mfp-close"><svg style="pointer-events: none;" viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="m1 1 24 24M25 1 1 25" stroke="#000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>',
+            items: {
+              src: inner,
+
+              type: "inline",
+              showCloseBtn: true,
+              closeBtnInside: false,
+            },
+            preloader: false,
+            callbacks: {
+              open: function () {
+                var topScroll = jQuery(window).scrollTop();
+                this.wrap.css("top", topScroll);
+
+                $("body").css("overflow", "hidden");
+                disableBodyScroll(true, ".mfp-wrap");
+              },
+              close: function () {
+                $("body").css("overflow", "auto");
+                disableBodyScroll(false, ".mfp-wrap");
+              },
+            },
+          });
+        }
+      });
+    });
+});

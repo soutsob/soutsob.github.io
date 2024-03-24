@@ -1,0 +1,103 @@
+function getClientId() {
+    try {
+        return window.ga.getAll()[0].get('clientId');
+    } catch (e) {
+        return false;
+    }
+}
+
+//contact form label animation
+window.addEventListener('message', event => {
+    if (event.data.type === 'hsFormCallback' && event.data.eventName === 'onFormReady') {
+        // the form is ready to manipulate!
+
+        try {
+            var forms = document.querySelectorAll('form');
+            forms.forEach(function (frm) {
+
+                var checkboxes = frm.getElementsByClassName('hs-fieldtype-booleancheckbox');
+
+
+
+                frm.addEventListener('submit', function () {
+                    setTimeout(function(){
+                        if (frm.getElementsByClassName('hs-error-msgs').length) {
+                            frm.classList.add('not-valid');
+                        }
+
+                        Array.from(checkboxes).forEach(function (box) {
+                            if (box.getElementsByClassName('hs-error-msgs').length){
+                                console.log('need check');
+                            }
+                        })
+
+                    }, 100);
+                })
+
+                var el = frm.querySelector('input[name="ga_client_id"]');
+                if (el) {
+                    setTimeout(function() {
+                        if (typeof ga !== 'undefined') {
+                            // GA is defined
+                            el.value = getClientId();
+                        } else {
+                            setTimeout(arguments.callee, 1000);
+                        }
+                    }, 1000);
+
+
+                    // frm.addEventListener('submit', function () {
+                    //     var ev = new Event('input', {
+                    //         bubbles: true,
+                    //         cancelable: true,
+                    //     });
+                    //     if (el) {
+                    //         el.value = getClientId();
+                    //         el.dispatchEvent(ev);
+                    //     }
+                    // })
+                }
+            })
+
+            jQuery(function ($) {
+                var $group = $('.hs-form-field'),
+                    $input = $group.find('input'),
+                    $textarea = $group.find('textarea');
+
+                $input.focusin(function () {
+                    $(this).closest($group).find('label').addClass('active');
+                });
+
+                $input.focusout(function () {
+                    if (!$(this).val())
+                        $(this).closest($group).find('label').removeClass('active');
+                });
+
+                $input.each(function () {
+                    if ($(this).val().length) {
+                        $(this).closest($group).find('label').addClass('active');
+                    }
+                });
+
+                $textarea.focusin(function () {
+                    $(this).closest($group).find('label').addClass('active');
+                });
+
+                $textarea.focusout(function () {
+                    if (!$(this).val())
+                        $(this).closest($group).find('label').removeClass('active');
+                });
+
+                $textarea.each(function () {
+                    if ($(this).val().length) {
+                        $(this).closest($group).find('label').addClass('active');
+                    }
+                });
+            })
+
+        } catch (e) {
+            console.error(e);
+        }
+
+    }
+});

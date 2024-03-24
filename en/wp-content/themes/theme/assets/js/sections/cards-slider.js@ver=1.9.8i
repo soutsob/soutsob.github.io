@@ -1,0 +1,60 @@
+// partners slider
+jQuery(document).ready(function($) {
+
+    let $pSlider = $(document.getElementById('cards-slider'));
+    if ($pSlider.length) {
+        let countSlides = $pSlider.find('.card-block').length;
+
+        videoLinksInit();
+
+        if (countSlides > 1) {
+
+            let initialSlide = 0;
+
+            if (countSlides > 2) {
+                initialSlide = 1;
+            }
+
+            let $pSliderArrows = $(document.getElementById('cards-slider-arrows'));
+            settings = {
+                infinite: false,
+                dots: false,
+                arrows: true,
+                speed: 800,
+                centerMode:true,
+                initialSlide: initialSlide,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                prevArrow: $pSliderArrows.find('.prev-arrow'),
+                nextArrow: $pSliderArrows.find('.next-arrow'),
+
+                responsive: [
+                    {
+                        breakpoint: 660,
+                        settings: "unslick"
+                    },
+                ],
+                mobileFirst: false,
+            };
+
+            if (window.innerWidth > 660) {
+                $pSlider.not(document.getElementsByClassName('slick-initialized')).slick(settings);
+            }
+
+            window.addEventListener('resize', function(){
+
+                if (window.innerWidth <= 660) {
+                    if ($pSlider.hasClass('slick-initialized'))
+                        $pSlider.slick('unslick');
+                    return
+                }
+                if ( ! $pSlider.hasClass('slick-initialized'))
+                    return $pSlider.slick(settings);
+
+                $pSlider.slick('resize')
+
+            });
+        }
+
+    }
+});

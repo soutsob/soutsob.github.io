@@ -1,0 +1,110 @@
+let slider = document.querySelectorAll('.single-video-slider');
+let arrows = $(document.getElementById('single-video-slider-arrows'));
+if (slider.length > 0) {
+
+    var $status = $('.pagingInfo');
+    var count = $(slider).find('.item').length;
+
+    count = (count < 10) ? '0' + count : count;
+    $(slider).find('.list').on('init', function(event, slick, currentSlide, nextSlide){
+
+        let video = $(this).find('.slick-current video');
+
+        if (video) {
+            $(slider).find('video').trigger('pause');
+            startVideo(video);
+        }
+    });
+
+    $(slider).find('.list').on('init reInit beforeChange', function(event, slick, currentSlide, nextSlide){
+        //currentSlide is undefined on init -- set it to 0 in this case (currentSlide is 0 based)
+        var i = (nextSlide ? nextSlide : 0) + 1;
+        i = (i < 10) ? '0' + i : i;
+        $status.html('<span class="gradient">'+ i + '</span>  |  ' + '<span>' + count + '</span>');
+
+        let video = $(this).find('.slick-slide video').eq(nextSlide);
+        if (video) {
+            $(slider).find('video').trigger('pause');
+            startVideo(video);
+        }
+    });
+
+    $(slider).find('.list').slick({
+        infinite: false,
+        dots: true,
+        arrows: true,
+        fade: true,
+        speed: 800,
+        slidesToShow: 1,
+        mobileFirst: true,
+        adaptiveHeight: true,
+        appendDots: $(slider).find('.dots-bar'),
+        prevArrow: arrows.find('.prev-arrow'),
+        nextArrow: arrows.find('.next-arrow'),
+        responsive: [
+            {
+                breakpoint: 659,
+                settings: {
+                    adaptiveHeight: false,
+                    dots: false,
+                }
+            },
+        ]
+    });
+
+
+
+    function startVideo(that) {
+        var lazyVideos = [].slice.call(that);
+
+        if ("IntersectionObserver" in window) {
+            var lazyVideoObserver = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(function(video) {
+                    if (video.isIntersecting) {
+                        for (var source in video.target.children) {
+                            var videoSource = video.target.children[source];
+                            if (typeof videoSource.tagName === "string" && videoSource.tagName === "SOURCE") {
+                                videoSource.src = videoSource.dataset.src;
+                            }
+                        }
+
+                        if(video.target.classList.contains("lazy_video")) {
+                            video.target.load();
+                        }
+                        video.target.classList.remove("lazy_video");
+                        lazyVideoObserver.unobserve(video.target);
+                    }
+                });
+            });
+
+            lazyVideos.forEach(function(lazyVideo) {
+                lazyVideoObserver.observe(lazyVideo);
+            });
+
+            lazyVideos.forEach(function(video) {
+                let promise = video.play();
+
+                if (promise !== undefined) {
+                    promise.then(_ => {
+                        // Autoplay started!
+                    }).catch(error => {
+                        if (error.name === "NotAllowedError") {
+                            var buttons = [].slice.call(document.querySelectorAll(".play-button"));
+                            // Autoplay was prevented.
+                            // Show a "Play" button so that user can start playback.
+                            buttons.forEach(function(button) {
+                                button.style.display = 'block';
+                            });
+                        } else {
+                            // Handle a load or playback error
+                        }
+                    });
+                }
+            });
+
+        }
+    }
+
+
+
+}

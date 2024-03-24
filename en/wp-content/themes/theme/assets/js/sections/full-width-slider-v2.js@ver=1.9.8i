@@ -1,0 +1,27 @@
+let slider = document.querySelectorAll('.full-width-slider-v2');
+let arrows = $(document.getElementById('full-width-slider-v2-arrows'));
+if (slider.length > 0) {
+
+    $(slider).find('.list').slick({
+        infinite: false,
+        dots: true,
+        arrows: true,
+        fade: true,
+        speed: 800,
+        slidesToShow: 1,
+        mobileFirst: true,
+        adaptiveHeight: true,
+        appendDots: $(slider).find('.dots-bar'),
+        prevArrow: arrows.find('.prev-arrow'),
+        nextArrow: arrows.find('.next-arrow'),
+        responsive: [
+            {
+                breakpoint: 659,
+                settings: {
+                    adaptiveHeight: false,
+                }
+            },
+        ]
+    });
+
+}
