@@ -2,7 +2,7 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
-const directoryPath = './en';
+const directoryPath = './';
 
 const server = http.createServer((req, res) => {
     const filePath = path.join(directoryPath, req.url);
