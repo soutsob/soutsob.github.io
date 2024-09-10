@@ -10,9 +10,29 @@
   gtag('config', 'G-HP5VT45WW7');
 </script>
     <link rel="stylesheet" href="/wp-content/themes/theme/assets/css/devops.css">
-    <style>img.lazy {
+    <style>
+        img.lazy {
         min-height: 1px
-    }</style>
+    }
+        .rss-item {
+            margin-bottom: 30px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 15px;
+        }
+        .rss-item img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin-bottom: 10px;
+        }
+        .rss-item h2 {
+            margin: 0 0 10px 0;
+        }
+        .rss-item a {
+            text-decoration: none;
+            color: blue;
+        }
+    </style>
     <link rel="preload" href="wp-content/plugins/w3-total-cache/pub/js/lazyload.min.js" as="script">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -70,6 +90,51 @@
             }))
             e.forEach((it => window.removeEventListener(it, l)))
         }
+
+            async function fetchRSS() {
+            const response = await fetch('https://openai.com/news/rss.xml');
+            const text = await response.text();
+            const parser = new DOMParser();
+            const xml = parser.parseFromString(text, 'application/xml');
+            const items = xml.querySelectorAll('item');
+
+            const container = document.getElementById('rss-feed');
+            container.innerHTML = ''; // Clear any existing content
+
+            items.forEach(item => {
+            const title = item.querySelector('title').textContent;
+            const link = item.querySelector('link').textContent;
+            const description = item.querySelector('description').textContent;
+            const image = item.querySelector('enclosure') ? item.querySelector('enclosure').getAttribute('url') : null;
+
+            const itemDiv = document.createElement('div');
+            itemDiv.classList.add('rss-item');
+
+            if (image) {
+            const imageElement = document.createElement('img');
+            imageElement.src = image;
+            itemDiv.appendChild(imageElement);
+        }
+
+            const titleElement = document.createElement('h2');
+            const linkElement = document.createElement('a');
+            linkElement.href = link;
+            linkElement.textContent = title;
+            linkElement.target = '_blank'; // Open link in a new tab
+
+            titleElement.appendChild(linkElement);
+            itemDiv.appendChild(titleElement);
+
+            const descriptionElement = document.createElement('p');
+            descriptionElement.textContent = description;
+            itemDiv.appendChild(descriptionElement);
+
+            container.appendChild(itemDiv);
+        });
+        }
+
+            fetchRSS();
+    </script>
     </script>
 
 
@@ -77,7 +142,6 @@
     <link rel="alternate" hreflang="en" href="https://soutsob.com.ua"/>
     <link rel="alternate" hreflang="ua" href="ua"/>
     <link rel="alternate" hreflang="x-default" href="https://soutsob.com.ua"/>
-
 
     <title>SOUTSOB | Global Technology</title>
     <meta name="description"
@@ -92,24 +156,6 @@
     <meta property="og:site_name" content="SOUTSOB"/>
     <meta property="article:modified_time" content="2024-02-02T15:09:22+00:00"/>
 
-    <style id='safe-svg-svg-icon-style-inline-css' type='text/css'>
-        .safe-svg-cover {
-            text-align: center
-        }
-
-        .safe-svg-cover .safe-svg-inside {
-            display: inline-block;
-            max-width: 100%
-        }
-
-        .safe-svg-cover svg {
-            height: 100%;
-            max-height: 100%;
-            max-width: 100%;
-            width: 100%
-        }
-
-    </style>
     <meta name="sumo_type" content="homepage">
     <link rel="icon" href="https://soutsob.com.ua/wp-content/themes/theme/assets/img/favicon/favicon-32x32.png"
           sizes="32x32"/>
@@ -119,10 +165,6 @@
           href="https://soutsob.com.ua/wp-content/themes/theme/assets/img/favicon/apple-touch-icon.png"/>
 </head>
 <body class="page-template-default page page-id-23883 page-parent cloud-upd-lp">
-
-
-
-
 <div id="page" class="page">
     <div id="blur"></div>
 
@@ -284,188 +326,18 @@
             }</style>
             <div class="breadcrumblist">
                 <a href="https://soutsob.com.ua/">SOUTSOB</a><span class="separator"><svg width="6" height="10" fill="none"><path
-                    d="m1 1 3.9 3.9V5L1 9" stroke="#787878"/></svg></span><span class="last-item">Page promotions</span>
+                    d="m1 1 3.9 3.9V5L1 9" stroke="#787878"/></svg></span><span class="last-item">Cloud &#038; DevOps Services</span>
             </div>
         </div>
         <div class="container content">
             <div class="row content-inner">
                 <div class="col-lg-9 col-md-10 col-xs-12">
-                    <h1 class="h2 article__title">Page promotions</h1>
+                    <h1 class="h2 article__title">AI Insights</h1>
                 </div>
-
-                <div class="col-lg-7 col-md-6 col-sm-10 col-xs-11 text-block"><p>At SOUTSOB, our tailored strategies are
-                    designed to elevate brand's presence across various platforms, engage target audience, and
-                    drive meaningful interactions. From crafting compelling content and leveraging social media channels
-                    to implementing targeted advertising campaigns and influencer partnerships, leverage a mix of
-                    innovative tactics to amplify brand's message and create lasting connections with
-                    audience.</p>
-                    <p>With our proven track record of delivering impactful results, you can trust us to elevate
-                        brand and propel business to new heights of success.</p>
+                <div class="col-lg-7 col-md-6 col-sm-10 col-xs-11 text-block"><div id="rss-feed"></div>
                 </div>
                 <div class="col-xs-12 btn-wrap">
-                    <a class="btn-clear wow zoomIn" href="../contact" title="Contact Us ">Contact Us</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="imagine-section">
-        <div class="container">
-            <h2 class="h3 section__title wow fadeInUp">Our Focus Areas</h2>
-
-            <div class="row" style="align-items: center">
-                <div class="col-md-5 col-xs-12">
-                    <div class="logo-holder">
-                        <div class="bg"></div>
-                        <div class="bar"></div>
-                        <div class="bar fill1"></div>
-                        <div class="bar fill2"></div>
-                        <div class="bar fill3"></div>
-                        <div class="bar fill4"></div>
-                        <div class="bar fill1"></div>
-                        <div class="bar fill5"></div>
-                        <div class="bar fill6"></div>
-                        <div class="bar fill1"></div>
-                        <div class="bar fill2"></div>
-                        <div class="bar fill3"></div>
-                        <div class="bar fill4"></div>
-                        <div class="bar fill1"></div>
-                        <div class="bar fill5"></div>
-                        <div class="bar fill6"></div>
-                        <div class="bar fill1"></div>
-                        <div class="bar fill5"></div>
-                        <div class="bar fill6"></div>
-                        <div class="bar fill3"></div>
-                        <div class="bar fill4"></div>
-                        <div class="bar fill1"></div>
-                        <div class="bar fill5"></div>
-                        <div class="bar fill6"></div>
-                        <div class="bar"></div>
-                    </div>
-                </div>
-
-                <div class="col-md-7 col-xs-12">
-
-                    <ul class="imagine-list">
-                        <li class="wow fadeIn" data-wow-delay="0.2s"><h3>Content Creation and Distribution</h3>
-                            <p>Develop engaging and relevant content across various channels, including social media,
-                                blogs, and email newsletters, to effectively communicate brand message.</p>
-                        </li>
-                        <li class="wow fadeIn" data-wow-delay="0.4s"><h3>Social Media Management</h3>
-                            <p>Manage and optimize social media presence on platforms such as Facebook, Instagram,
-                                Twitter, and LinkedIn to increase brand awareness and engagement.</p>
-                        </li>
-                        <li class="wow fadeIn" data-wow-delay="0.6s"><h3>Online Advertising</h3>
-                            <p>Create and manage targeted online advertising campaigns across platforms like Google Ads,
-                                Facebook Ads, and LinkedIn Ads to increase brand visibility and drive conversions.</p>
-                        </li>
-                        <li class="wow fadeIn" data-wow-delay="0.8s"><h3>Brand Monitoring and Analysis</h3>
-                            <p>Monitor brand mentions and sentiment across various channels, analyze performance
-                                metrics, and provide actionable insights to continually optimize brand promotion
-                                efforts.</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="banner-with-link">
-
-        <div id="video-container">
-            <video autoplay muted loop playsinline
-                   poster="https://soutsob.com.ua/wp-content/themes/theme/assets/video/devops-preview.png"
-                   class="video banner">
-                <source src="https://soutsob.com.ua/wp-content/themes/theme/assets/video/devops(1080p).mp4"
-                        type="video/mp4">
-            </video>
-            <div class="play-button"
-                 style="position: absolute;right: 15px;cursor: pointer;color: #fff;bottom: 15px;z-index: 2; width: 32px; height: 32px; display: none"
-                 onclick="playVideo()">
-                <svg class="icon-svg plyr-play" role="img" aria-hidden="true">
-
-                </svg>
-            </div>
-            <script>
-                var promise = document.querySelector('#video-container video').play();
-
-                function playVideo() {
-                    var video = document.querySelector('#video-container video');
-                    video.play();
-                    document.querySelector('.play-button').style.display = 'none';
-                }
-
-                if (promise !== undefined) {
-                    promise.then(_ => {
-                        // Autoplay started!
-                    }).catch(error => {
-                        document.querySelector('.play-button').style.display = 'block';
-                        // Autoplay was prevented.
-                        // Show a "Play" button so that user can start playback.
-                    });
-                }
-            </script>
-        </div>
-
-        <div class="container">
-            <div class="row">
-                <div class="col-md-offset-1 col-md-10 col-xs-12">
-                    <div class="content wow fadeInUp">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="technology-partnership">
-        <div class="container" style="position: relative">
-            <div class="title-wrap">
-                <h2 class="h3 section__title wow fadeInUp">Popular providers for your success</h2></div>
-            <div class="items">
-                <a class="block-link item wow fadeInUp" data-wow-delay="0s"
-                    target="">
-                    <div class="icon">
-                        <img class="lazy loaded"
-                             src="https://soutsob.com.ua/wp-content/themes/theme/assets/img/promotions/img.png"
-                             data-src="https://soutsob.com.ua/wp-content/themes/theme/assets/img/promotions/img.png"
-                             alt="Meta logo" width="80" height="45" data-was-processed="true">
-                    </div>
-                    <div class="title">Meta(Facebook) Ads</div>
-                    <div class="description"><p>Meta Ad (Facebook) offers a streamlined and efficient advertising
-                        solution that
-                        maximizes reach and engagement across various digital platforms. With advanced targeting
-                        options and powerful analytics, Meta Ad ensures ads are seen by the right audience, driving
-                        impactful results for business.</p>
-                    </div>
-                </a>
-                <div class="block-link item wow fadeInUp" data-wow-delay="0.1s">
-                    <div class="icon">
-                        <img class="lazy loaded"
-                             src="https://soutsob.com.ua/wp-content/themes/theme/assets/img/promotions/googlead.png"
-                             data-src="https://soutsob.com.ua/wp-content/themes/theme/assets/img/promotions/googlead.png"
-                             alt="Meta logo" width="80" height="45" data-was-processed="true">
-                    </div>
-                    <div class="title">Google Ads</div>
-                    <div class="description"><p>Google Ad provides a powerful platform for businesses to reach
-                        target audience through highly targeted and measurable advertising campaigns. With a variety of
-                        ad formats and targeting options, Google Ad helps increase visibility, drive traffic,
-                        and achieve their advertising goals effectively.</p>
-                    </div>
-                </div>
-                <div class="block-link item wow fadeInUp" data-wow-delay="0.2s">
-                    <div class="icon">
-                        <img class="lazy loaded"
-                             src="https://soutsob.com.ua/wp-content/themes/theme/assets/img/promotions/googleanalytics.png"
-                             data-src="https://soutsob.com.ua/wp-content/themes/theme/assets/img/promotions/googleanalytics.png"
-                             alt="Meta logo" width="80" height="45" data-was-processed="true">
-                    </div>
-                    <div class="title">WooCommerce</div>
-                    <div class="description"><p>Google Analytics is a robust web analytics platform that provides
-                        valuable insights into website traffic, user behavior, and conversion data. With powerful
-                        reporting features and user-friendly dashboards, Google Analytics helps businesses track and
-                        analyze their online performance to make data-driven decisions and optimize their digital
-                        marketing strategies.</p>
-                    </div>
+                    <a class="btn-clear wow zoomIn" href="../contact" title="Contact Us ">Contact Us </a>
                 </div>
             </div>
         </div>
@@ -837,7 +709,7 @@ I give consent to the processing of my personal data given in the contact form a
     <script type="text/javascript" id="theme-script-js-extra">
         /* <![CDATA[ */
         var theme_script_localize = {
-            "ajaxurl": "https:\/\/SOUTSOB.\/wp-admin\/admin-ajax.php?lang=en",
+            "ajaxurl": "https:\/\/soutsob.com.ua\/wp-admin\/admin-ajax.php?lang=en",
             "site_url": "https:\/\/soutsob.com.ua",
             "noposts": "That's all for now",
             "loadmore": "Show More"
