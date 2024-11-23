@@ -776,7 +776,7 @@
         display: block;
         width: 20px;
         height: 10px;
-        background: url(https://soutsob.com.ua/wp-content/themes/theme/assets/img/shevron-bottom.svg) no-repeat;
+        background: url(https://soutsob.com.ua/resources/themes/theme/assets/img/shevron-bottom.svg) no-repeat;
         background-size: contain;
         background-position: center
     }
@@ -858,7 +858,7 @@
         margin-left: 12px;
         vertical-align: middle;
         line-height: 1;
-        content: url("wp-content/themes/theme/assets/img/arrow-short.svg")
+        content: url("resources/themes/theme/assets/img/arrow-short.svg")
     }
 }
 
@@ -1251,7 +1251,7 @@
         margin-left: 12px;
         vertical-align: middle;
         line-height: 1;
-        content: url("wp-content/themes/theme/assets/img/arrow-short.svg")
+        content: url("resources/themes/theme/assets/img/arrow-short.svg")
     }
 
     .submenu__inner-sidebar ul a {
@@ -1723,7 +1723,7 @@ section.styled + .section-get-in-touch + section.styled {
         bottom: auto;
         left: auto;
         z-index: -1;
-        background: url("wp-content/themes/theme/assets/img/dots/long.svg") no-repeat;
+        background: url("resources/themes/theme/assets/img/dots/long.svg") no-repeat;
         background-size: cover
     }
 }

@@ -20,7 +20,7 @@ function videoLinksInit(videoItemSelector) {
             items: {
                 src:
                     '<div class="video-popup">' +
-                    '<div class="video-plyr" data-plyr-provider="' + videoCheck(videoSrc) + '" data-plyr-embed-id="' + videoSrc + '" data-plyr-config=\'{ "autoplay": "true", "iconUrl": "/wp-content/themes/theme/assets/img/sprite.svg"  }\'></div>' +
+                    '<div class="video-plyr" data-plyr-provider="' + videoCheck(videoSrc) + '" data-plyr-embed-id="' + videoSrc + '" data-plyr-config=\'{ "autoplay": "true", "iconUrl": "/resources/themes/theme/assets/img/sprite.svg"  }\'></div>' +
                     '</div>'
             },
             callbacks: {
@@ -55,7 +55,7 @@ function videoLinksInit(videoItemSelector) {
 
         var video_items_plyr_attr;
         if (!/iPad|iPhone|iPod/.test(navigator.userAgent)) {
-            video_items_plyr_attr = 'data-plyr-config=\'{ "autoplay": "true", "iconUrl": "/wp-content/themes/theme/assets/img/sprite.svg"  }\'';
+            video_items_plyr_attr = 'data-plyr-config=\'{ "autoplay": "true", "iconUrl": "/resources/themes/theme/assets/img/sprite.svg"  }\'';
         }
         jQuery.magnificPopup.open({
             type: 'inline',
