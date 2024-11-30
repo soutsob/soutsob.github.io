@@ -180,7 +180,8 @@
                                                                 Development</a></li>
                                                             <li class="m-item mi-26243 no-child"><a
                                                                     href="https://soutsob.com.ua/mobiledevelopment-services">Mobile
-                                                                Development</a></li><li class="m-item mi-26243 no-child"><a
+                                                                Development</a></li>
+                                                            <li class="m-item mi-26243 no-child"><a
                                                                     href="https://soutsob.com.ua/backend-services">Backend
                                                                 Development</a></li>
                                                         </ul>
@@ -286,24 +287,24 @@
             }</style>
             <div class="breadcrumblist">
                 <a href="https://soutsob.com.ua/">SOUTSOB</a><span class="separator"><svg width="6" height="10" fill="none"><path
-                    d="m1 1 3.9 3.9V5L1 9" stroke="#787878"/></svg></span><span class="last-item">SEO</span>
+                    d="m1 1 3.9 3.9V5L1 9" stroke="#787878"/></svg></span><span class="last-item">Backend Development</span>
             </div>
         </div>
         <div class="container content">
             <div class="row content-inner">
                 <div class="col-lg-9 col-md-10 col-xs-12">
-                    <h1 class="h2 article__title">SEO</h1>
+                    <h1 class="h2 article__title">Backend Development</h1>
                 </div>
 
-                <div class="col-lg-7 col-md-6 col-sm-10 col-xs-11 text-block"><p>At SOUTSOB, our team of experts
-                    utilizes industry-leading strategies to optimize your website, improve search engine rankings, and
-                    enhance user experience. From keyword research and on-page optimization to content creation and link
-                    building, we tailor approach to meet unique business goals. With our proven track record of
-                    delivering results, we'll help dominate search engine results pages and attract more qualified
-                    leads to website.</p>
+                <div class="col-lg-7 col-md-6 col-sm-10 col-xs-11 text-block"><p>At SOUTSOB,
+                    we specialize in building robust, scalable, and secure systems to power applications.
+                    We handle the core functionalities, such as database management, API integration, server-side logic, and system performance optimization.
+                    Using modern frameworks and programming languages like Java, Node.js and Python, we ensure seamless data flow between the user interface and the server.
+                    </p>
+                    <p>Whether you're building a web app, mobile app, or enterprise solution, we create efficient architectures tailored to your business needs, ensuring reliability and scalability.</p>
                 </div>
                 <div class="col-xs-12 btn-wrap">
-                    <a class="btn-clear wow zoomIn" href="https://soutsob.com.ua/contact" title="Contact Us ">Contact Us </a>
+                    <a class="btn-clear wow zoomIn" href="https://soutsob.com.ua/contact" title="Contact Us ">Contact Us</a>
                 </div>
             </div>
         </div>
@@ -345,25 +346,121 @@
                 </div>
 
                 <div class="col-md-7 col-xs-12">
-
                     <ul class="imagine-list">
-                        <li class="wow fadeIn" data-wow-delay="0.2s"><h3>On-Page Optimization</h3>
-                            <p>Optimize meta tags, headings, and content on website to improve search engine
-                                rankings and user experience.</p>
+                        <li class="wow fadeIn" data-wow-delay="0.2s"><h3>API Development and Integration</h3>
+                            <p>Seamlessly connect applications with powerful RESTful, GraphQL APIs, WebSockets.</p>
                         </li>
-                        <li class="wow fadeIn" data-wow-delay="0.4s"><h3>Keyword Research and Analysis</h3>
-                            <p>Identify relevant keywords and phrases that target audience is searching for to
-                                improve website's visibility.</p>
+                        <li class="wow fadeIn" data-wow-delay="0.4s"><h3>Scalable Architecture</h3>
+                            <p>Supporting modern application needs building solutions based on monolith, microservices, nano-services styles.</p>
                         </li>
-                        <li class="wow fadeIn" data-wow-delay="0.6s"><h3>Content Creation and Optimization</h3>
-                            <p>Develop high-quality, SEO-friendly content that engages audience and drives organic
-                                traffic to website.</p>
+                        <li class="wow fadeIn" data-wow-delay="0.6s"><h3>Data Management</h3>
+                            <p>Implementing relational and NoSQL databases for optimal performance and reliability.</p>
                         </li>
-                        <li class="wow fadeIn" data-wow-delay="0.8s"><h3>Technical SEO</h3>
-                            <p>Ensure website is optimized for search engines by addressing issues such as site
-                                speed, mobile-friendliness, and crawlability.</p>
+                        <li class="wow fadeIn" data-wow-delay="0.8s"><h3>Security and Performance Optimization</h3>
+                            <p>Safeguarding data and ensuring high system uptime based on world standards.</p>
                         </li>
                     </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="banner-with-link">
+
+        <div id="video-container">
+            <video autoplay muted loop playsinline
+                   poster="https://soutsob.com.ua/resources/themes/theme/assets/video/devops-preview.png"
+                   class="video banner">
+                <source src="https://soutsob.com.ua/resources/themes/theme/assets/video/devops(1080p).mp4"
+                        type="video/mp4">
+            </video>
+            <div class="play-button"
+                 style="position: absolute;right: 15px;cursor: pointer;color: #fff;bottom: 15px;z-index: 2; width: 32px; height: 32px; display: none"
+                 onclick="playVideo()">
+                <svg class="icon-svg plyr-play" role="img" aria-hidden="true">
+
+                </svg>
+            </div>
+            <script>
+                var promise = document.querySelector('#video-container video').play();
+
+                function playVideo() {
+                    var video = document.querySelector('#video-container video');
+                    video.play();
+                    document.querySelector('.play-button').style.display = 'none';
+                }
+
+                if (promise !== undefined) {
+                    promise.then(_ => {
+                        // Autoplay started!
+                    }).catch(error => {
+                        document.querySelector('.play-button').style.display = 'block';
+                        // Autoplay was prevented.
+                        // Show a "Play" button so that user can start playback.
+                    });
+                }
+            </script>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-offset-1 col-md-10 col-xs-12">
+                    <div class="content wow fadeInUp">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="technology-partnership">
+        <div class="container" style="position: relative">
+            <div class="title-wrap">
+                <h2 class="h3 section__title wow fadeInUp">Popular providers for your success</h2></div>
+            <div class="items">
+                <a class="block-link item wow fadeInUp" data-wow-delay="0s"
+                    target="">
+                    <div class="icon">
+                        <img class="lazy loaded"
+                             src="https://soutsob.com.ua/resources/themes/theme/assets/img/backend/java.png"
+                             data-src="https://soutsob.com.ua/resources/themes/theme/assets/img/backend/java.png"
+                             alt="Meta logo" width="80" height="45" data-was-processed="true">
+                    </div>
+                    <div class="title">Java</div>
+                    <div class="description"><p>Java is a high-level, object-oriented programming language known for its platform independence, achieved through the Java Virtual Machine (JVM).
+                        It is widely used for building secure, robust, and scalable applications, ranging from web and mobile apps to enterprise and embedded systems.
+                        Java emphasizes simplicity, portability, and performance, supported by a vast ecosystem of libraries and frameworks.
+                        Its "write once, run anywhere" philosophy makes it a preferred choice for developers building cross-platform solutions.</p>
+                    </div>
+                </a>
+                <div class="block-link item wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="icon">
+                        <img class="lazy loaded"
+                             src="https://soutsob.com.ua/resources/themes/theme/assets/img/backend/nodejs.png"
+                             data-src="https://soutsob.com.ua/resources/themes/theme/assets/img/backend/nodejs.png"
+                             alt="Meta logo" width="80" height="45" data-was-processed="true">
+                    </div>
+                    <div class="title">Node.js</div>
+                    <div class="description"><p>Node.js is a runtime environment that enables developers to run JavaScript on the server side, beyond the browser.
+                        Built on Chrome's JavaScript engine, it offers high performance and event-driven, non-blocking I/O, making it ideal for real-time applications and scalable network solutions.
+                        Its ecosystem, powered by npm (Node Package Manager), provides access to numerous modules for fast development.
+                        Node.js is particularly suited for creating APIs, microservices, and streaming services, supporting asynchronous programming for efficient resource use.</p>
+                    </div>
+                </div>
+                <div class="block-link item wow fadeInUp" data-wow-delay="0.2s">
+                    <div class="icon">
+                        <img class="lazy loaded"
+                             src="https://soutsob.com.ua/resources/themes/theme/assets/img/backend/python.png"
+                             data-src="https://soutsob.com.ua/resources/themes/theme/assets/img/backend/python.png"
+                             alt="Meta logo" width="80" height="45" data-was-processed="true">
+                    </div>
+                    <div class="title">Python</div>
+                    <div class="description"><p>Python is a versatile, high-level programming language known for its simplicity and readability.
+                        It supports multiple programming paradigms, including object-oriented, procedural, and functional programming.
+                        Python is widely used in web development, data analysis, artificial intelligence, machine learning, and scripting.
+                        Its extensive standard library and community-contributed packages make it a powerful tool for rapid development.
+                        With frameworks like Django and Flask, it’s a popular choice for backend development, while libraries like Pandas and TensorFlow cater to data and AI-related tasks.
+                        Python's ease of learning makes it beginner-friendly yet powerful for professionals.</p>
+                    </div>
                 </div>
             </div>
         </div>
