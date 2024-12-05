@@ -1,1 +1,0 @@
-jQuery(function(s){s(".tab-opener").click(function(){s(this).closest(".block").hasClass("active")||s(".block").removeClass("active"),s(this).closest(".block").toggleClass("active")})});
