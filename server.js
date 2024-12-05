@@ -9,7 +9,7 @@ const server = http.createServer((req, res) => {
 
     fs.readFile(filePath, (err, data) => {
         if (err) {
-            res.writeHead(404, { 'Content-Type': 'text/plain' });
+            res.writeHead(404, {'Content-Type': 'text/plain'});
             res.end('File not found');
         } else {
             res.writeHead(200);
