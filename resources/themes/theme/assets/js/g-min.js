@@ -8,41 +8,6 @@ jQuery.event.special.touchstart = {
     }
 };
 var winH = window.innerHeight;
-let disableBodyScroll = function () {
-    let e, t = !1, i = !1;
-    Element.prototype.matches || (Element.prototype.matches = Element.prototype.msMatchesSelector || Element.prototype.webkitMatchesSelector), Element.prototype.closest || (Element.prototype.closest = function (e) {
-        let t = this;
-        if (!document.documentElement.contains(el)) return null;
-        do {
-            if (t.matches(e)) return t;
-            t = t.parentElement
-        } while (null !== t);
-        return el
-    });
-    let o = function (e) {
-        !1 !== i && e.target.closest(t) || e.preventDefault()
-    }, n = function (t) {
-        1 === t.targetTouches.length && (e = t.targetTouches[0].clientY)
-    }, s = function (t) {
-        if (1 !== t.targetTouches.length) return;
-        let o = t.targetTouches[0].clientY - e;
-        0 === i.scrollTop && o > 0 && t.preventDefault(), i.scrollHeight - i.scrollTop <= i.clientHeight && o < 0 && t.preventDefault()
-    };
-    return function (e, l) {
-        void 0 !== l && (t = l, i = document.querySelector(l)), !0 === e ? (!1 !== i && (i.addEventListener("touchstart", n, !1), i.addEventListener("touchmove", s, !1)), document.body.addEventListener("touchmove", o, !1)) : (!1 !== i && (i.removeEventListener("touchstart", n, !1), i.removeEventListener("touchmove", s, !1)), document.body.removeEventListener("touchmove", o, !1))
-    }
-}();
-
-function init_custom_scroll_element(e) {
-    let t = e;
-    if (t) {
-        let e = t.height();
-        t.prop("scrollHeight") - e > 30 && (t.css("overflow-y", "auto"), t.mCustomScrollbar({
-            theme: "dark-thin",
-            alwaysShowScrollbar: 2
-        }))
-    }
-}
 
 let StartAccordion = function (e) {
     if (null != e) try {
@@ -92,11 +57,6 @@ function hasScrolled(e, t) {
     })) : i + winH < e && (fixedHeader.classList.remove("fixed--nav"), fixedHeader.classList.contains("header--transparent-hide") && (fixedHeader.classList.add("header--transparent"), fixedHeader.classList.remove("header--transparent-hide")), Array.from(t).forEach(function (e) {
         e.classList.remove("fixed--nav")
     }))
-}
-
-function block_scroll(e, t, i) {
-    let o = $(e), n = $(t), s = o.height() + o.offset().top - $(window).height() - 250;
-    $(this).scrollTop() > s && !n.hasClass("no-more-posts") && !n.hasClass("posts-loading") && i()
 }
 
 jQuery(function (e) {
