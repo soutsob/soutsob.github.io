@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Editor with Logo and Text</title>
+</head>
+<body>
+<h1>Image Editor with Logo and Text</h1>
+<input type="file" id="imageInput" accept="image/*">
+<input type="file" id="logoInput" accept="image/*">
+<input type="text" id="textInput" placeholder="Enter your text here">
+<label for="canvasWidth">Canvas Width:</label>
+<input type="number" id="canvasWidth" value="1200">
+<label for="canvasHeight">Canvas Height:</label>
+<input type="number" id="canvasHeight" value="630">
+<button onclick="resizeCanvas()">Resize Canvas</button>
+<canvas id="canvas" width="1200" height="630"></canvas>
+<button onclick="downloadImage()">Download Image</button>
+
+<script>
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    let img = new Image();
+    let logo = new Image();
+    let text = "";
+
+    // Resize canvas dynamically
+    function resizeCanvas() {
+        const newWidth = document.getElementById('canvasWidth').value;
+        const newHeight = document.getElementById('canvasHeight').value;
+        canvas.width = newWidth;
+        canvas.height = newHeight;
+        redrawCanvas();
+    }
+
+    // Redraw canvas after changes
+    function redrawCanvas() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        if (img.src) ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+        if (logo.src) ctx.drawImage(logo, canvas.width - 150, 10, 100, 100);
+        ctx.font = '48px Arial';
+        ctx.fillStyle = 'white';
+        ctx.textAlign = 'center';
+        ctx.fillText(text, canvas.width / 2, 200);
+    }
+
+    // Load and draw the main image
+    document.getElementById('imageInput').onchange = function(event) {
+        const file = event.target.files[0];
+        img.src = URL.createObjectURL(file);
+        img.onload = redrawCanvas;
+    };
+
+    // Load and draw the logo
+    document.getElementById('logoInput').onchange = function(event) {
+        const file = event.target.files[0];
+        logo.src = URL.createObjectURL(file);
+        logo.onload = redrawCanvas;
+    };
+
+    // Add text to the image
+    document.getElementById('textInput').oninput = function(event) {
+        text = event.target.value;
+        redrawCanvas();
+    };
+
+    // Download the final image
+    function downloadImage() {
+        redrawCanvas();
+        setTimeout(() => {
+            const link = document.createElement('a');
+            link.download = 'edited-image.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        }, 100);
+    }
+</script>
+</body>
+</html>
