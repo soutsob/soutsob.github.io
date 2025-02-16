@@ -454,7 +454,8 @@
                 <h2 class="anchor" id="article-0">Compute Services</h2>
                 <p><strong>Compute Engine:</strong> Provides highly customizable and scalable virtual machines that run in Google’s data centers. Supports a variety of configurations, operating systems, and workloads.</p>
                 <p><strong>Google Kubernetes Engine (GKE):</strong> A managed Kubernetes service that provides orchestration of containerized applications. Enables auto-scaling and simplified management of clusters.</p>
-                <p><strong>Cloud Run:</strong> Fully managed serverless platform designed to run containerized applications directly with automatic scaling and pay-per-use pricing.</p>
+                <p><strong>Cloud Run Containers:</strong> Fully managed serverless platform designed to run containerized applications directly with automatic scaling and pay-per-use pricing.</p>
+                <p><strong>Cloud Functions:</strong> Fully managed serverless, allows to run event-driven code without managing servers. It automatically scales based on demand and integrates with various Google Cloud services, making it ideal for microservices, automation, and lightweight backend processing.</p>
                 <p><strong>App Engine:</strong> A platform-as-a-service (PaaS) for building and deploying scalable web applications, supporting multiple programming languages and automatic scaling.</p>
 
                 <h3>Compute Decision Tree</h3>
@@ -477,17 +478,19 @@ Compute Decision Tree
 │           └── Use Case: Websites, databases, basic applications with moderate resource needs
 │
 ├── 3. Deployment Model
-│   ├── Serverless (No server management, event-driven)
-│   │   └── Compute Option: Serverless Compute (e.g., Cloud Functions)
-│   │       └── Use Case: Short-lived tasks, event-driven systems
-│   ├── Managed Containers
-│   │   └── Compute Option: Kubernetes Engine (e.g., GKE)
-│   │       └── Use Case: Containerized applications with high scalability
+│   ├── Serverless (No server management, Access)
+│   │   ├── Execution limits Option: Cloud Run functions
+│   │   │    └── Use Case: Short-lived tasks, event-driven systems
+│   │   └── Container-based Option: Cloud Run
+│   │        └── Use Case: Docker Containerized applications
+│   ├── K8s Containers
+│   │   └── K8s Option: Google Kubernetes Engine
+│   │        └── Use Case: K8s based applications with high scalability
 │   ├── Virtual Machines (IaaS)
-│   │   └── Compute Option: Virtual Machines (e.g., Google Compute Engine)
+│   │   └── Compute Option: Google Compute Engine
 │   │       └── Use Case: Full control over infrastructure, legacy applications
 │   └── Fully Managed Platform (PaaS)
-│       └── Compute Option: Platform-as-a-Service (e.g., Google App Engine)
+│       └── Compute Option: Google App Engine
 │           └── Use Case: Fast deployment of web applications with minimal configuration
 │
 ├── 4. Performance Requirements
@@ -507,7 +510,7 @@ Compute Decision Tree
             └── Use Case: Long-term projects where cost optimization is needed
             </pre>
                 <h2 class="anchor" id="article-1">Storage Services</h2>
-                <p><strong>Cloud Storage:</strong> Object storage service offering unlimited storage for unstructured data, with multiple classes for cost optimization and high durability.</p>
+                <p><strong>Cloud Storage:</strong> Object storage service offering unlimited storage for unstructured data, with different storage classes for cost optimization and high durability and archiving.</p>
                 <p><strong>Persistent Disks:</strong> High-performance block storage for virtual machines, with SSD and HDD options to suit different workloads.</p>
                 <p><strong>Filestore:</strong> Fully managed file storage service for applications that require a shared file system, supporting NFS protocol.</p>
                 <p><strong>Cloud Storage Transfer Service:</strong> Facilitates data transfers between cloud storage and on-premises systems or between different cloud environments.</p>
