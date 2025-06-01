@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en-US">
-<head><!-- Google tag (gtag.js) -->
+<head>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HP5VT45WW7"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -13,22 +13,12 @@
 
         gtag('config', 'G-HP5VT45WW7');
     </script>
-    <link href="/resources/css/blog.css" rel="stylesheet">
+    <link href="../../resources/css/devops.css" rel="stylesheet">
     <style>
-        .breadcrumblist {
-            color: #555;
-            padding: 20px 0;
-            font-size: 14px;
-            line-height: 18px
-        }
-
-        .breadcrumblist .separator {
-            font-size: 18px;
-            padding: 0 8px;
-        }
-
-        .breadcrumblist > :first-child {
-            color: #454545
+        @media (min-width: 970px) {
+            .h-s {
+                 margin-bottom: 88px;
+            }
         }
         img.lazy {
             min-height: 1px
@@ -49,72 +39,131 @@
             text-decoration: none;
             color: blue;
         }
-        .posts__item {
-            position: relative;
-            margin-bottom: 32px;
-        }
-        .posts__item-inner {
-            position: relative;
-            z-index: 5;
-            max-width: 100%;
-            width: 100%;
-            border-radius: 8px;
-        }
-        .posts__item-inner.big-post {
-            height: 100%;
-        }
-        .posts__item-inner .posts__item-image-wrap {
-            position: relative;
-            display: block;
-            transition: .2s all;
-            height: 150px;
-            overflow: hidden;
-            background-color: #d8e1e9;
-            border-radius: 8px 8px 0 0;
-            z-index: -1;
-        }
-        .posts__item-inner .posts__item-image {
-            display: block;
-            width: 100%;
-            height: 100%;
-            -o-object-fit: cover;
-            object-fit: cover;
-            min-height: 100%;
+
+        .breadcrumblist {
+            color: #555;
+            padding: 20px 0;
+            font-size: 14px;
+            line-height: 18px
         }
 
-        .posts__item-text-wrap {
-            padding: 16px 0 0 0;
-            max-width: 100%;
-            height: calc(100% - 201px);
+        .breadcrumblist .separator {
+            font-size: 18px;
+            padding: 0 8px;
         }
-        .posts__item-text-wrap>* {
-            max-width: 100%;
+
+        .breadcrumblist > :first-child {
+            color: #454545
         }
-        .posts__item-text-wrap .categories-tag {
-            margin-bottom: 16px;
+
+        .h-s .main-info {
+            margin-bottom: 48px;
         }
-        .categories-tag {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-        }
-        .posts__item-title {
-            margin-bottom: 16px;
-            font-size: 22px;
-            line-height: 28px;
+
+        .h-s .time-wrap.mod {
+            color: #454545;
             font-weight: 600;
         }
-        .categories-tag span.cat {
-             font-size: 14px;
-             line-height: 14px;
-             padding: 3px 10px;
-         }
-        .categories-tag .cat {
-            border: 1px solid #e6e6e6;
-            border-radius: 100px;
+
+        .h-s .main-info .time-wrap {
+            margin-bottom: 30px;
+        }
+
+        .h-s .time-wrap {
+            display: inline-flex;
+            height: -moz-fit-content;
+            height: fit-content;
+            flex-wrap: wrap;
+            font-size: 16px;
+            line-height: 24px;
+            color: #393939;
+            align-items: center;
+            background: #ededed;
+            padding: 2px 10px;
+            border-radius: 8px;
+        }
+
+        .h-s .main-info .title {
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .h-s .main-info .subtitle {
+            color: #393939;
+        }
+
+        .h-s .main-info .subtitle {
+            font-size: 18px;
+            line-height: 24px;
+            margin-bottom: 16px;
+        }
+
+        .h-s .post-image {
+            border-radius: 8px;
+            margin-bottom: 32px;
+            background-size: cover !important;
+            width: 100%;
+            height: 380px;
+            background-image: url('../../resources/img/blog/7/7.jpg') !important;
+        }
+
+        .table-content-wrap {
+            display: block;
+        }
+        .sticky-content {
+                 position: sticky;
+                 top: 130px;
+                 width: 100%;
+                 z-index: 100;
+                 margin-right: 0;
+                 margin-left: auto;
+             }
+
+        .table-of-content {
+            width: 100%;
+            overflow: hidden;
+            z-index: 100;
+            margin-right: 0;
+            margin-left: auto;
+        }
+
+        .table-of-content .title {
+            font-size: 12px;
+            font-weight: 700;
+            color: rgba(85, 85, 85, .7);
+            margin-bottom: 12px;
+            text-transform: uppercase;
+        }
+
+        .table-of-content>.main-nav {
+            overflow-y: scroll;
+            width: 100%;
+            box-sizing: content-box;
+            max-height: calc(85vh - 90px);
+            padding-right: 17px;
+        }
+
+        .table-of-content>.main-nav>.item {
+            padding-left: 10px;
+        }
+
+        .table-of-content ul li:not(:nth-last-child(1)) {
+            padding-bottom: 12px;
+        }
+
+        ul li {
+            list-style: none;
+        }
+
+        .table-of-content .link.active {
+            font-weight: 700;
+            color: #000;
+        }
+        p {
+            text-align: justify;
         }
     </style>
-    <link as="script" href="/resources/js/lazyload.min.js" rel="preload">
+    <link as="script" href="../../resources/js/lazyload.min.js" rel="preload">
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1" name="viewport">
 
@@ -138,7 +187,9 @@
                 } else {
                     w.readyQ.push(x);
                 }
-            }var a = {ready: p, bind: p};
+            }
+
+            var a = {ready: p, bind: p};
             w.$ = w.jQuery = function (f) {
                 if (f === d || f === u) {
                     return a
@@ -176,7 +227,7 @@
     <link href="https://soutsob.com.ua/ua" hreflang="ua" rel="alternate"/>
     <link href="https://soutsob.com.ua" hreflang="x-default" rel="alternate"/>
 
-    <title>SOUTSOB | Blog</title>
+    <title>SOUTSOB | Global Technology</title>
     <meta content="At SOUTSOB, we embody a passion for cutting-edge solutions, a commitment to excellence, and a relentless pursuit of customer satisfaction. "
           name="description"/>
     <link href="https://soutsob.com.ua" rel="canonical"/>
@@ -248,8 +299,8 @@
                                                                 <a href="https://soutsob.com.ua/cloud-development-services">Cloud
                                                                     &
                                                                     DevOps</a></li>
-                                                            <li class="m-item mi-31548 no-child"><a href="https://soutsob.com.ua/ai">AI Insights</a></li>
-                                                            <li class="m-item mi-31548 no-child"><a href="https://soutsob.com.ua/blog">Blog</a></li>
+                                                            <li class="m-item mi-31548 no-child">
+                                                                <a href="https://soutsob.com.ua/ai">AI Insights</a></li> <li class="m-item mi-31548 no-child"><a href="https://soutsob.com.ua/blog">Blog</a></li>
 
                                                         </ul>
                                                     </li>
@@ -356,266 +407,113 @@
         <div class="container">
             <div class="breadcrumblist">
                 <a href="https://soutsob.com.ua/">SOUTSOB</a>
-                <span class="separator"><svg fill="none" height="10" width="6"><path d="m1 1 3.9 3.9V5L1 9" stroke="#787878"/></svg></span>
-                <span class="last-item"><a href="https://soutsob.com.ua/blog">Blog</a></span>
+                <span class="separator">
+                <svg fill="none" height="10" width="6">
+                    <path d="m1 1 3.9 3.9V5L1 9" stroke="#787878"/>
+                </svg>
+            </span>
+                <span class="last-item">
+                <a href="https://soutsob.com.ua/blog">Blog</a>
+            </span>
             </div>
-        </div>
-        <div class="container content">
-            <div class="row content-inner">
-                <div class="col-lg-9 col-md-10 col-xs-12">
-                    <h1 class="h2 article__title">SOUTSOB Blog</h1>
-                </div>
-                <div class="col-lg-7 col-md-6 col-sm-10 col-xs-11 text-block">
-                    <p>Insights. Innovation. Impact.</p>
-                </div>
-                <div class="col-xs-12 btn-wrap">
-                    <a class="btn-clear wow zoomIn" href="https://soutsob.com.ua/contact" title="Contact Us ">Contact
-                        Us </a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="blog-section">
-        <div class="container">
-            <h2 class="h3 title">Latest blogs</h2>
-            <div class="posts ajax_posts">
-                <div class="row">
-                    <div class="posts__item col-xs-12 col-md-8 fadeInUp wow" style="visibility: visible; animation-name: fadeInUp;">
-                        <div class="posts__item-inner big-post">
-                            <a class="posts__item-image-wrap" href="https://soutsob.com.ua/blog/1/index.html">
-                                <img alt="How AI is Transforming Business Operations"
-                                     class="posts__item-image lazy loaded"
-                                     data-sizes="(max-width: 659px) 370px,(min-width: 660px) 770px"
-                                     data-src="../../resources/img/blog/1/ai.jpg"
-                                     data-srcset="../../resources/img/blog/1/ai.jpg" data-was-processed="true"
-                                     height="500"
-                                     sizes="(max-width: 659px) 370px,(min-width: 660px) 770px"
-                                     src="https://soutsob.com.ua/resources/img/blog/1/ai.jpg"
-                                     srcset="https://soutsob.com.ua/resources/img/blog/1/ai.jpg"
-                                     width="770">
-                            </a>
-                            <div class="posts__item-text-wrap">
-                                <div class="categories-tag">
-                                    <span class="cat">AI &amp; ML</span>
-                                    <span class="cat">Business Innovation</span>
-                                    <span class="cat">AI Transformation</span>
-                                </div>
-                                <a class="posts__item-title" href="https://soutsob.com.ua/blog/1/index.html">How AI is Transforming Business Operations</a>
-
-                                <div class="block">
-                                    <div class="time-wrap"><span class="date">January 7,   2025</span>
-                                        <span class="time">3  mins read</span>
-                                    </div>
-                                </div>
-                                <a class="link" href="https://soutsob.com.ua/blog/1/index.html">
-                                    <span class="screen-reader-text">How AI is Transforming Business Operations</span>
-                                </a>
-                            </div>
-
-                        </div>
+            <div class="row">
+                <div class="main-info col-xs-12" style="margin-top: 32px;">
+                    <div class="time-wrap mod">
+                    <span itemscope="" itemtype="http://schema.org/CreativeWork">
+                        <span class="last-updated" datetime="January 09,2025" itemprop="dateModified">
+                            Updated: March 09, 2025 |
+                        </span>
+                    </span>
+                        <span class="time"> 6 mins read | </span>
+                        <span class="published-date"> Published: March 01, 2025</span>
                     </div>
-                    <div class="posts__item col-xs-12 col-sm-6 col-md-4 fadeInUp wow" style="visibility: visible; animation-name: fadeInUp;">
-                        <div class="posts__item-inner ">
-                            <a class="posts__item-image-wrap" href="https://soutsob.com.ua/blog/2/index.html">
-                                <img alt="Top Software Engineering Trends to Watch"
-                                     class="posts__item-image lazy loaded"
-                                     data-sizes="(max-width: 659px) 310px,(min-width: 660px) 370px"
-                                     data-src="https://soutsob.com.ua/resources/img/blog/2/2.jpg"
-                                     data-srcset="https://soutsob.com.ua/resources/img/blog/2/2.jpg" data-was-processed="true"
-                                     height="240"
-                                     sizes="(max-width: 659px) 310px,(min-width: 660px) 370px"
-                                     src="https://soutsob.com.ua/resources/img/blog/2/2.jpg"
-                                     srcset="https://soutsob.com.ua/resources/img/blog/2/2.jpg 310w,https://soutsob.com.ua/resources/img/blog/2/2.jpg 370w"
-                                     width="370">
-                            </a>
-                            <div class="posts__item-text-wrap">
-                                <div class="categories-tag"><span class="cat">AI</span><span class="cat">Software Engineering</span><span
-                                        class="cat">DevOps</span></div>
-                                <a class="posts__item-title" href="https://soutsob.com.ua/blog/2/index.html">Top Software Engineering Trends to Watch</a>
-
-                                <div class="block">
-                                    <div class="time-wrap"><span class="date">January 2,   2025 </span><span class="time">4  mins read</span></div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="posts__item col-xs-12 col-sm-6 col-md-4 fadeInUp wow"
-                         style="visibility: visible; animation-name: fadeInUp;">
-                        <div class="posts__item-inner ">
-                            <a class="posts__item-image-wrap" href="https://soutsob.com.ua/blog/7/index.html">
-                                <img alt="The Business Value of Solid System Architecture"
-                                     class="posts__item-image lazy loaded"
-                                     data-sizes="(max-width: 659px) 310px,(min-width: 660px) 370px"
-                                     data-src="https://soutsob.com.ua/resources/img/blog/7/7.jpg" data-srcset="https://soutsob.com.ua/resources/img/blog/7/7.jpg 310w,https://soutsob.com.ua/resources/img/blog/7/7.jpg 370w"
-                                     data-was-processed="true"
-                                     height="240"
-                                     sizes="(max-width: 659px) 310px,(min-width: 660px) 370px"
-                                     src="https://soutsob.com.ua/resources/img/blog/7/7.jpg"
-                                     srcset="https://soutsob.com.ua/resources/img/blog/7/7.jpg 310w,https://soutsob.com.ua/resources/img/blog/7/7.jpg 370w"
-                                     width="370">
-                            </a>
-                            <div class="posts__item-text-wrap">
-                                <div class="categories-tag">
-                                    <span class="cat">AI</span>
-                                    <span class="cat">Business Value</span>
-                                    <span class="cat">System design</span>
-                                    <span class="cat">Solution Architecture</span>
-                                </div>
-                                <a class="posts__item-title" href="https://soutsob.com.ua/blog/7/index.html">The Business Value of Solid System Architecture</a>
-
-                                <div class="block">
-                                    <div class="time-wrap"><span class="date">March 1,   2025</span><span
-                                            class="time"> 10  mins read</span></div>
-                                </div>
-
-                                <a class="link" href="https://soutsob.com.ua/blog/7/index.html">
-                                    <span class="screen-reader-text">The Business Value of Solid System Architecture</span>
-                                </a>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="posts__item col-xs-12 col-sm-6 col-md-4 fadeInUp wow"
-                         style="visibility: visible; animation-name: fadeInUp;">
-                        <div class="posts__item-inner ">
-                            <a class="posts__item-image-wrap" href="https://soutsob.com.ua/blog/6/index.html">
-                                <img alt="Choosing the right services on GCP - Decision Trees"
-                                     class="posts__item-image lazy loaded"
-                                     data-sizes="(max-width: 659px) 310px,(min-width: 660px) 370px"
-                                     data-src="https://soutsob.com.ua/resources/img/blog/6/6.jpg" data-srcset="https://soutsob.com.ua/resources/img/blog/6/6.jpg 310w,https://soutsob.com.ua/resources/img/blog/6/6.jpg 370w"
-                                     data-was-processed="true"
-                                     height="240"
-                                     sizes="(max-width: 659px) 310px,(min-width: 660px) 370px"
-                                     src="https://soutsob.com.ua/resources/img/blog/6/6.jpg"
-                                     srcset="https://soutsob.com.ua/resources/img/blog/6/6.jpg 310w,https://soutsob.com.ua/resources/img/blog/6/6.jpg 370w"
-                                     width="370">
-                            </a>
-                            <div class="posts__item-text-wrap">
-                                <div class="categories-tag"><span class="cat">AI</span><span
-                                        class="cat">Business Innovation</span><span
-                                        class="cat">GCP</span></div>
-                                <a class="posts__item-title" href="https://soutsob.com.ua/blog/6/index.html">Choosing the right services on GCP - Decision Trees</a>
-
-                                <div class="block">
-                                    <div class="time-wrap"><span class="date">January 26,   2025</span><span
-                                            class="time"> 10  mins read</span></div>
-                                </div>
-
-                                <a class="link" href="https://soutsob.com.ua/blog/6/index.html">
-                                    <span class="screen-reader-text">Choosing the right services on GCP - Decision Trees</span>
-                                </a>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="posts__item col-xs-12 col-sm-6 col-md-4 fadeInUp wow" style="visibility: visible; animation-name: fadeInUp;">
-                        <div class="posts__item-inner ">
-                            <a class="posts__item-image-wrap" href="https://soutsob.com.ua/blog/3/index.html">
-                                <img alt="Software Engineering Innovations"
-                                     class="posts__item-image lazy loaded"
-                                     data-sizes="(max-width: 659px) 310px,(min-width: 660px) 370px"
-                                     data-src="https://soutsob.com.ua/resources/img/blog/3/3.jpg"
-                                     data-srcset="https://soutsob.com.ua/resources/img/blog/3/3.jpg 310w,https://soutsob.com.ua/resources/img/blog/3/3.jpg 370w" data-was-processed="true"
-                                     height="240"
-                                     sizes="(max-width: 659px) 310px,(min-width: 660px) 370px"
-                                     src="https://soutsob.com.ua/resources/img/blog/3/3.jpg"
-                                     srcset="https://soutsob.com.ua/resources/img/blog/3/3.jpg 310w,https://soutsob.com.ua/resources/img/blog/3/3.jpg 370w"
-                                     width="370">
-                            </a>
-                            <div class="posts__item-text-wrap">
-                                <div class="categories-tag">
-                                    <span class="cat">AI Tools</span>
-                                    <span class="cat">DevOps</span>
-                                    <span class="cat">Software Engineering</span>
-                                </div>
-                                <a class="posts__item-title" href="https://soutsob.com.ua/blog/3/index.html">Software Engineering Innovations</a>
-
-                                <div class="block">
-                                    <div class="time-wrap">
-                                        <span class="date">January 1,   2025</span>
-                                        <span class="time">2  mins read</span>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="posts__item col-xs-12 col-sm-6 col-md-4 fadeInUp wow" style="visibility: visible; animation-name: fadeInUp;">
-                        <div class="posts__item-inner ">
-                            <a class="posts__item-image-wrap" href="https://soutsob.com.ua/blog/4/index.html">
-                                <img alt="Exploring Serverless Computing in Cloud Architecture"
-                                     class="posts__item-image lazy loaded"
-                                     data-sizes="(max-width: 659px) 310px,(min-width: 660px) 370px"
-                                     data-src="https://soutsob.com.ua/resources/img/blog/4/4.jpg" data-srcset="https://soutsob.com.ua/resources/img/blog/4/4.jpg 310w,https://soutsob.com.ua/resources/img/blog/4/4.jpg 370w" data-was-processed="true"
-                                     height="240"
-                                     sizes="(max-width: 659px) 310px,(min-width: 660px) 370px"
-                                     src="https://soutsob.com.ua/resources/img/blog/4/4.jpg"
-                                     srcset="https://soutsob.com.ua/resources/img/blog/4/4.jpg 310w,https://soutsob.com.ua/resources/img/blog/4/4.jpg 370w"
-                                     width="370">
-                            </a>
-                            <div class="posts__item-text-wrap">
-                                <div class="categories-tag">
-                                    <span class="cat">Cloud Computing</span>
-                                    <span class="cat">Serverless</span>
-                                    <span class="cat">Cloud Architecture</span>
-                                </div>
-                                <a class="posts__item-title" href="https://soutsob.com.ua/blog/4/index.html">Exploring Serverless Computing in Cloud Architecture</a>
-
-                                <div class="block">
-                                    <div class="time-wrap"><span class="date">September 29,   2024</span><span
-                                            class="time"> 5  mins read</span></div>
-                                </div>
-
-                                <a class="link" href="https://soutsob.com.ua/blog/4/index.html">
-                                    <span class="screen-reader-text">Exploring Serverless Computing in Cloud Architecture</span>
-                                </a>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="posts__item col-xs-12 col-sm-6 col-md-4 fadeInUp wow"
-                         style="visibility: visible; animation-name: fadeInUp;">
-                        <div class="posts__item-inner ">
-                            <a class="posts__item-image-wrap" href="https://soutsob.com.ua/blog/5/index.html">
-                                <img alt="The Impact of AI on Modern Delivery"
-                                     class="posts__item-image lazy loaded"
-                                     data-sizes="(max-width: 659px) 310px,(min-width: 660px) 370px"
-                                     data-src="https://soutsob.com.ua/resources/img/blog/5/5.jpg" data-srcset="https://soutsob.com.ua/resources/img/blog/5/5.jpg 310w,https://soutsob.com.ua/resources/img/blog/5/5.jpg 370w"
-                                     data-was-processed="true"
-                                     height="240"
-                                     sizes="(max-width: 659px) 310px,(min-width: 660px) 370px"
-                                     src="https://soutsob.com.ua/resources/img/blog/5/5.jpg"
-                                     srcset="https://soutsob.com.ua/resources/img/blog/5/5.jpg 310w,https://soutsob.com.ua/resources/img/blog/5/5.jpg 370w"
-                                     width="370">
-                            </a>
-                            <div class="posts__item-text-wrap">
-                                <div class="categories-tag"><span class="cat">AI</span><span
-                                        class="cat">Business Innovation</span><span
-                                        class="cat">Productivity</span></div>
-                                <a class="posts__item-title" href="https://soutsob.com.ua/blog/5/index.html">The Impact of AI on Modern Delivery</a>
-
-                                <div class="block">
-                                    <div class="time-wrap"><span class="date">November 25,   2024</span><span
-                                            class="time"> 9  mins read</span></div>
-                                </div>
-
-                                <a class="link" href="https://soutsob.com.ua/blog/5/index.html">
-                                    <span class="screen-reader-text">The Impact of AI on Modern Delivery</span>
-                                </a>
-                            </div>
-
-                        </div>
-                    </div>
+                    <h1 class="h3 title" itemprop="headline">The Business Value of Solid System Architecture</h1>
+                    <p class="subtitle"></p>
+                    <div class="main-info-bottom"></div>
                 </div>
             </div>
-            <div class="btn-clear btn-clear--more" data-ppp="5" id="more_posts">Show more</div>
-            <div class="blog-page-link">
-                <div data-filters="" id="more_posts_filters_data" style="display: none;"></div>
-            </div>
+            <div class="post-image"></div>
         </div>
     </section>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-lg-offset-1 col-xs-12 table-content-wrap">
+                <div class="sticky-content">
+                    <nav class="table-of-content">
+                        <div class="title">Content</div>
+                        <ul class="main-nav">
+                            <li class="item"><a class="link" href="#article-0">Business Architecture</a></li>
+                            <li class="item"><a class="link" href="#article-1">System Design</a></li>
+                            <li class="item"><a class="link" href="#article-2">Prioritize Security and Compliance</a></li>
+                            <li class="item"><a class="link" href="#article-3">Establish Robust Integration and Interfaces</a></li>
+                            <li class="item"><a class="link" href="#article-4">Support Observability and Maintainability</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+            <article class="blog-article text-block col-lg-8 col-xs-12">
+                <h2 class="anchor" id="article-0">Business Architecture: Define Clear Objectives and Constraints</h2>
+                <p>
+                    ---
+                    DRIVERS --> GOALS --> OBJECTIVES
+                    ---
+                </p>
+                <p>Before writing a single line of code or sketching a system component, it’s critical to define what the system is supposed to accomplish. Objectives should be clearly stated in business terms — whether improving user engagement, reducing operational costs, or supporting expansion into new markets. Each goal must align with the strategic direction of the company.</p>
+                <p>Equally important are the constraints: budget, delivery timelines, regulatory compliance, and technical limitations. Without these boundaries, architects risk overengineering or misaligning the architecture with actual needs. Early stakeholder workshops can reveal critical assumptions and undocumented expectations.</p>
+                <p>Understanding the business and technological context also shapes architectural thinking. For example, designing a platform for a startup requires different trade-offs than building for an enterprise-grade system with legacy dependencies. Objectives and constraints together form the foundational blueprint guiding future decisions.</p>
+                <p>Successful architectures often document these definitions formally using architecture decision records (ADRs), providing transparency and traceability for future teams who revisit these decisions months or years later.</p>
+
+                <h2 class="anchor" id="article-1">System Design: Design for ...abilities</h2>
+                <p>
+                    ---
+                    OBJECTIVES --> CONSTRAINTS --> CONTEXT --> DECISIONS
+                    ---
+                </p>
+                <p>One of the core architectural principles is to design systems that can grow and adapt. Scalability is not just about handling high load today — it’s about being able to evolve as user demands, data volumes, and business models change. Microservices, containerization, and message-driven communication patterns are just a few of the tools enabling elastic systems.</p>
+                <p>To build for flexibility, embrace separation of concerns and interface-driven design. Components should expose well-defined APIs and encapsulate their internal logic. This decoupling allows development teams to iterate independently, replace outdated modules, or scale individual components without reworking the entire system.</p>
+                <p>Elasticity is especially important in cloud-native systems. Leveraging managed services and infrastructure-as-code allows applications to scale up or down automatically in response to load. Kubernetes, autoscaling groups, and serverless functions can dynamically adjust system resources in real-time.</p>
+                <p>Finally, don’t just build to scale technically. Design for organizational scale too. Modular systems empower teams to take ownership of components, improving velocity and reducing coordination overhead.</p>
+
+                <h2 class="anchor" id="article-2">Prioritize Security and Compliance</h2>
+                <p>
+                    ---
+                    THREAT MODEL --> AUTHORIZATION --> ENCRYPTION --> AUDIT
+                    ---
+                </p>
+                <p>Security should never be an afterthought. Threat modeling during the design phase helps identify system vulnerabilities and critical data flows. This lets architects plan for protections early rather than retrofitting them under pressure later.</p>
+                <p>Access control is a key pillar — implementing strong authentication and role-based access mechanisms ensures users only access data relevant to their roles. Zero-trust principles are increasingly common in distributed and cloud environments.</p>
+                <p>Data protection mechanisms such as TLS for transit and encryption at rest are foundational. Many jurisdictions also require compliance with regulations like GDPR, HIPAA, or ISO standards. Architects must map regulatory requirements to architectural solutions from the beginning.</p>
+                <p>Security is also about observability. Audit logging, alerting, and incident response playbooks ensure that issues can be quickly identified and addressed. A secure system is not just designed, it’s continuously validated and monitored.</p>
+
+                <h2 class="anchor" id="article-3">Establish Robust Integration and Interfaces</h2>
+                <p>
+                    ---
+                    MODULE --> API --> CONTRACT --> VERSIONING
+                    ---
+                </p>
+                <p>Systems rarely exist in isolation. They must interoperate with other internal services, external APIs, or third-party systems. Clear, consistent interfaces enable this integration and reduce friction between components.</p>
+                <p>Architects should define APIs as first-class citizens. RESTful or GraphQL APIs with comprehensive documentation and consistent naming conventions reduce integration risk and promote reuse. API gateways can abstract internal services and handle authentication, rate-limiting, and monitoring.</p>
+                <p>Data contracts and schema management are equally important, especially in event-driven or microservice architectures. Tools like Avro, Protobuf, or OpenAPI help formalize communication expectations between systems.</p>
+                <p>Consider versioning strategies from the start. Interfaces evolve, and backward compatibility becomes essential in large systems. Breaking changes should be rare, and deployment pipelines should include contract tests to validate integration health continuously.</p>
+
+                <h2 class="anchor" id="article-4">Support Observability and Maintainability</h2>
+                <p>
+                    ---
+                    LOGGING --> METRICS --> ALERTS --> FEEDBACK LOOPS
+                    ---
+                </p>
+                <p>It’s not enough to build a system that works — it must be operable and supportable over its entire lifecycle. Observability enables teams to understand the internal state of a system through logging, metrics, and traces. These provide the visibility necessary to diagnose issues, understand performance, and monitor user behavior.</p>
+                <p>Use structured logging and correlation IDs to trace requests through distributed systems. Combine this with dashboards showing system health, performance KPIs, and error rates. Monitoring tools like Prometheus, Grafana, Datadog, or New Relic are essential for proactive issue detection.</p>
+                <p>Maintainability also depends on documentation, automation, and simplicity. Automated tests, CI/CD pipelines, and infrastructure-as-code improve consistency and reduce manual overhead. Codebases should be clean, modular, and supported by readable documentation.</p>
+                <p>Finally, embed feedback loops. Post-mortems, incident reviews, and customer feedback should feed directly into system improvements. A great architecture evolves continuously in response to operational realities.</p>
+
+                <a class="btn-clear btn-locations" href="https://soutsob.com.ua/contact" title="Contact us">Contact us</a>
+            </article>
+        </div>
+    </div>
+
+
     <section class="cta">
         <div class="container">
             <div class="row">
@@ -886,7 +784,8 @@ I give consent to the processing of my personal data given in the contact form a
                             <a href="https://clutch.co/profile/soutsob" target="_blank">
                                 <svg class="icon-svg icon-twitter" height="24" viewBox="0 0 18 18" width="24"
                                      xmlns="http://www.w3.org/2000/svg">
-                                    <path clip-rule="evenodd" d="M8.56999 11.9105C9.60318 11.9105 10.5446 11.5587 11.2583 10.9223L11.7562 10.4828L14 12.6707L13.4658 13.1648C12.1826 14.347 10.4388 15 8.56899 15C4.54512 15 1.5 11.9651 1.5 7.95663C1.5 3.9306 4.47355 1 8.56899 1C10.4045 1 12.1292 1.65298 13.4295 2.81761L13.9819 3.31173L11.7734 5.50164L11.2764 5.07769C10.5456 4.44128 9.58503 4.10602 8.56999 4.10602C6.23752 4.10602 4.6187 5.69558 4.6187 7.9732C4.6187 10.2518 6.29195 11.9105 8.56999 11.9105ZM10.8299 8.00929C10.8299 6.71113 9.77051 5.66052 8.46114 5.66052H8.46215C7.15479 5.66052 6.09439 6.71113 6.09339 8.00929C6.09339 9.30549 7.15378 10.3581 8.46114 10.3581C9.77051 10.3581 10.8299 9.30549 10.8299 8.00929Z"
+                                    <path clip-rule="evenodd"
+                                          d="M8.56999 11.9105C9.60318 11.9105 10.5446 11.5587 11.2583 10.9223L11.7562 10.4828L14 12.6707L13.4658 13.1648C12.1826 14.347 10.4388 15 8.56899 15C4.54512 15 1.5 11.9651 1.5 7.95663C1.5 3.9306 4.47355 1 8.56899 1C10.4045 1 12.1292 1.65298 13.4295 2.81761L13.9819 3.31173L11.7734 5.50164L11.2764 5.07769C10.5456 4.44128 9.58503 4.10602 8.56999 4.10602C6.23752 4.10602 4.6187 5.69558 4.6187 7.9732C4.6187 10.2518 6.29195 11.9105 8.56999 11.9105ZM10.8299 8.00929C10.8299 6.71113 9.77051 5.66052 8.46114 5.66052H8.46215C7.15479 5.66052 6.09439 6.71113 6.09339 8.00929C6.09339 9.30549 7.15378 10.3581 8.46114 10.3581C9.77051 10.3581 10.8299 9.30549 10.8299 8.00929Z"
                                           fill-rule="evenodd"></path>
                                 </svg>
                                 <span class="screen-reader-text">SOUTSOB Clutch</span></a>
@@ -983,29 +882,29 @@ I give consent to the processing of my personal data given in the contact form a
                   id="svg-logo__title"/>
         </symbol>
     </svg>
-    <link as='style' href='../resources/css/style.css' id='theme-style' onload="this.onload=null;this.rel='stylesheet'"
+    <link as='style' href='../../resources/css/style.css' id='theme-style' onload="this.onload=null;this.rel='stylesheet'"
           rel='preload'/>
     <noscript>
-        <link href="../resources/css/style.css" rel="stylesheet">
+        <link href="../../resources/css/style.css" rel="stylesheet">
     </noscript>
-    <link href='../resources/css/cloud-upd-lp.css' id='cloud-upd-lp-css-css'
+    <link href='../../resources/css/cloud-upd-lp.css' id='cloud-upd-lp-css-css'
           media='all' rel='stylesheet'
           type='text/css'/>
     <script defer id="wow-js-js" src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js?ver=1.1.2"
             type="text/javascript"></script>
     <script defer id="jquery-js" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"
             type="text/javascript"></script>
-    <script defer id="slick-js-js" src="../resources/js/slick-min.js"
+    <script defer id="slick-js-js" src="../../resources/js/slick-min.js"
             type="text/javascript"></script>
-    <script defer id="contact-js-js" src="../resources/js/contact-min.js"
+    <script defer id="contact-js-js" src="../../resources/js/contact-min.js"
             type="text/javascript"></script>
-    <script defer id="theme-script-js" src="../resources/js/g-min.js"
+    <script defer id="theme-script-js" src="../../resources/js/g-min.js"
             type="text/javascript"></script>
-    <script defer id="header-js" src="../resources/js/h-min.js"
+    <script defer id="header-js" src="../../resources/js/h-min.js"
             type="text/javascript"></script>
-    <script defer id="cloud-schema-js-js" src="../resources/js/cloud-schema.js"
+    <script defer id="cloud-schema-js-js" src="../../resources/js/cloud-schema.js"
             type="text/javascript"></script>
-    <script defer id="swv-js" src="../resources/js/index.js"
+    <script defer id="swv-js" src="../../resources/js/index.js"
             type="text/javascript"></script>
 </div>
 <script>window.w3tc_lazyload = 1, window.lazyLoadOptions = {
@@ -1019,6 +918,6 @@ I give consent to the processing of my personal data given in the contact form a
         window.dispatchEvent(e)
     }
 }</script>
-<script async src="../resources/js/lazyload.min.js"></script>
+<script async src="../../resources/js/lazyload.min.js"></script>
 </body>
 </html>
