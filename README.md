@@ -1,0 +1,1 @@
+SVG icons sources: https://www.svgrepo.com/

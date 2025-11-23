@@ -1,0 +1,1 @@
+jQuery(function(e){let t=e(document.getElementById("slider-top"));t.length&&t.not(document.getElementsByClassName("slick-initialized")).slick({dots:!0,arrows:!1,autoplay:!1,autoplaySpeed:7e3,speed:400,pauseOnHover:!0,slidesToShow:1,slidesToScroll:1,mobileFirst:!0,waitForAnimate:!1,fade:!0,draggable:!0})});

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Editor with Logo and Text</title>
+</head>
+<body>
+<h1>Image Editor with Logo and Text</h1>
+<input type="file" id="imageInput" accept="image/*">
+<input type="file" id="logoInput" accept="image/*">
+<input id="textInput" placeholder="Enter your primary text here" type="text">
+<input id="textColorInput" type="color" value="#FFFFFF">
+<input id="secondaryTextInput" placeholder="Enter your secondary text here" type="text">
+<input id="secondaryTextColorInput" type="color" value="#FFFFFF">
+<label for="cropX">Crop X:</label>
+<input id="cropX" type="number" value="0">
+<label for="cropY">Crop Y:</label>
+<input id="cropY" type="number" value="0">
+<label for="cropWidth">Crop Width:</label>
+<input id="cropWidth" type="number" value="1200">
+<label for="cropHeight">Crop Height:</label>
+<input id="cropHeight" type="number" value="628">
+<button onclick="cropImage()">Resize Image</button>
+<canvas id="canvas"></canvas>
+<button onclick="downloadImage()">Download Image</button>
+
+<script>
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    let img = new Image();
+    let logo = new Image();
+    let text = "";
+    let secondaryText = "";
+    let textColor = "#FFFFFF";
+    let secondaryTextColor = "#FFFFFF";
+    let cropX = 0, cropY = 0, cropWidth = 1200, cropHeight = 628;
+    let imageLoaded = false;
+    let originalFileName = "edited-image";
+
+    function cropImage() {
+        cropX = parseInt(document.getElementById('cropX').value);
+        cropY = parseInt(document.getElementById('cropY').value);
+        cropWidth = parseInt(document.getElementById('cropWidth').value);
+        cropHeight = parseInt(document.getElementById('cropHeight').value);
+        canvas.width = cropWidth;
+        canvas.height = cropHeight;
+        redrawCanvas(true);
+    }
+
+    function redrawCanvas(applyCrop = false) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        if (img.src && imageLoaded) {
+            if (applyCrop) {
+                ctx.drawImage(img, cropX, cropY, cropWidth, cropHeight, 0, 0, canvas.width, canvas.height);
+            } else {
+                canvas.width = img.naturalWidth;
+                canvas.height = img.naturalHeight;
+                ctx.drawImage(img, 0, 0);
+            }
+        }
+        if (logo.src) {
+            ctx.drawImage(logo, canvas.width - 230, -50, 200, 200);
+        }
+        ctx.font = '48px Arial';
+        ctx.fillStyle = textColor;
+        ctx.textAlign = 'center';
+        ctx.fillText(text, canvas.width / 2, 200);
+
+        ctx.font = '32px Arial';
+        ctx.fillStyle = secondaryTextColor;
+        ctx.fillText(secondaryText, canvas.width / 2, 260);
+    }
+
+    document.getElementById('imageInput').onchange = function(event) {
+        const file = event.target.files[0];
+        originalFileName = file.name.replace(/\.[^/.]+$/, "");
+        img.src = URL.createObjectURL(file);
+        img.onload = function () {
+            imageLoaded = true;
+            redrawCanvas();
+        };
+    };
+
+    document.getElementById('logoInput').onchange = function(event) {
+        const file = event.target.files[0];
+        logo.src = URL.createObjectURL(file);
+        logo.onload = redrawCanvas;
+    };
+
+    document.getElementById('textInput').oninput = function (event) {
+        text = event.target.value;
+        redrawCanvas();
+    };
+
+    document.getElementById('textColorInput').oninput = function (event) {
+        textColor = event.target.value;
+        redrawCanvas();
+    };
+
+    document.getElementById('secondaryTextInput').oninput = function (event) {
+        secondaryText = event.target.value;
+        redrawCanvas();
+    };
+
+    document.getElementById('secondaryTextColorInput').oninput = function (event) {
+        secondaryTextColor = event.target.value;
+        redrawCanvas();
+    };
+
+    function downloadImage() {
+        redrawCanvas(true);
+        setTimeout(() => {
+            const link = document.createElement('a');
+            link.download = originalFileName + '_post.png';
+            link.href = canvas.toDataURL('image/png');
+            link.click();
+        }, 100);
+    }
+</script>
+</body>
+</html>

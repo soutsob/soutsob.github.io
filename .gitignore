@@ -1,0 +1,20 @@
+# IntelliJ IDEA
+/.idea/
+.idea/
+*.iml
+*.iws
+*.ipr
+out/
+build/
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# Other
+*.log
+*.bak
+*.swp
+*.swo
+/.idea/*
+
