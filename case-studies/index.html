@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en-US">
-<head>
+<head><!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-HP5VT45WW7"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -13,15 +13,22 @@
 
         gtag('config', 'G-HP5VT45WW7');
     </script>
-    <link href="../../resources/css/devops.css" rel="stylesheet">
+    <link href="/resources/css/blog.css" rel="stylesheet">
     <style>
-        p {
-            text-align: justify;
+        .breadcrumblist {
+            color: #555;
+            padding: 20px 0;
+            font-size: 14px;
+            line-height: 18px
         }
-        @media (min-width: 970px) {
-            .h-s {
-                 margin-bottom: 88px;
-            }
+
+        .breadcrumblist .separator {
+            font-size: 18px;
+            padding: 0 8px;
+        }
+
+        .breadcrumblist > :first-child {
+            color: #454545
         }
         img.lazy {
             min-height: 1px
@@ -42,128 +49,72 @@
             text-decoration: none;
             color: blue;
         }
-
-        .breadcrumblist {
-            color: #555;
-            padding: 20px 0;
-            font-size: 14px;
-            line-height: 18px
+        .posts__item {
+            position: relative;
+            margin-bottom: 32px;
         }
-
-        .breadcrumblist .separator {
-            font-size: 18px;
-            padding: 0 8px;
-        }
-
-        .breadcrumblist > :first-child {
-            color: #454545
-        }
-
-        .h-s .main-info {
-            margin-bottom: 48px;
-        }
-
-        .h-s .time-wrap.mod {
-            color: #454545;
-            font-weight: 600;
-        }
-
-        .h-s .main-info .time-wrap {
-            margin-bottom: 30px;
-        }
-
-        .h-s .time-wrap {
-            display: inline-flex;
-            height: -moz-fit-content;
-            height: fit-content;
-            flex-wrap: wrap;
-            font-size: 16px;
-            line-height: 24px;
-            color: #393939;
-            align-items: center;
-            background: #ededed;
-            padding: 2px 10px;
+        .posts__item-inner {
+            position: relative;
+            z-index: 5;
+            max-width: 100%;
+            width: 100%;
             border-radius: 8px;
         }
-
-        .h-s .main-info .title {
-            font-weight: 700;
-            margin-bottom: 8px;
+        .posts__item-inner.big-post {
+            height: 100%;
+        }
+        .posts__item-inner .posts__item-image-wrap {
+            position: relative;
+            display: block;
+            transition: .2s all;
+            height: 150px;
+            overflow: hidden;
+            background-color: #d8e1e9;
+            border-radius: 8px 8px 0 0;
+            z-index: -1;
+        }
+        .posts__item-inner .posts__item-image {
+            display: block;
+            width: 100%;
+            height: 100%;
+            -o-object-fit: cover;
+            object-fit: cover;
+            min-height: 100%;
         }
 
-        .h-s .main-info .subtitle {
-            color: #393939;
+        .posts__item-text-wrap {
+            padding: 16px 0 0 0;
+            max-width: 100%;
+            height: calc(100% - 201px);
         }
-
-        .h-s .main-info .subtitle {
-            font-size: 18px;
-            line-height: 24px;
+        .posts__item-text-wrap>* {
+            max-width: 100%;
+        }
+        .posts__item-text-wrap .categories-tag {
             margin-bottom: 16px;
         }
-
-        .h-s .post-image {
-            border-radius: 8px;
-            margin-bottom: 32px;
-            background-size: cover !important;
-            width: 100%;
-            height: 380px;
-            background-image: url('../../resources/img/blog/1/ai.jpg') !important;
+        .categories-tag {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
         }
-
-        .table-content-wrap {
-            display: block;
+        .posts__item-title {
+            margin-bottom: 16px;
+            font-size: 22px;
+            line-height: 28px;
+            font-weight: 600;
         }
-        .sticky-content {
-                 position: sticky;
-                 top: 130px;
-                 width: 100%;
-                 z-index: 100;
-                 margin-right: 0;
-                 margin-left: auto;
-             }
-
-        .table-of-content {
-            width: 100%;
-            overflow: hidden;
-            z-index: 100;
-            margin-right: 0;
-            margin-left: auto;
-        }
-
-        .table-of-content .title {
-            font-size: 12px;
-            font-weight: 700;
-            color: rgba(85, 85, 85, .7);
-            margin-bottom: 12px;
-            text-transform: uppercase;
-        }
-
-        .table-of-content>.main-nav {
-            overflow-y: scroll;
-            width: 100%;
-            box-sizing: content-box;
-            max-height: calc(85vh - 90px);
-            padding-right: 17px;
-        }
-
-        .table-of-content>.main-nav>.item {
-            padding-left: 10px;
-        }
-
-        .table-of-content ul li:not(:nth-last-child(1)) {
-            padding-bottom: 12px;
-        }
-
-        ul li {
-            list-style: none;
-        }
-
-        .table-of-content .link.active {
-            font-weight: 700;
-            color: #000;
+        .categories-tag span.cat {
+             font-size: 14px;
+             line-height: 14px;
+             padding: 3px 10px;
+         }
+        .categories-tag .cat {
+            border: 1px solid #e6e6e6;
+            border-radius: 100px;
         }
     </style>
-    <link as="script" href="../../resources/js/lazyload.min.js" rel="preload">
+    <link as="script" href="/resources/js/lazyload.min.js" rel="preload">
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1" name="viewport">
 
@@ -187,9 +138,7 @@
                 } else {
                     w.readyQ.push(x);
                 }
-            }
-
-            var a = {ready: p, bind: p};
+            }var a = {ready: p, bind: p};
             w.$ = w.jQuery = function (f) {
                 if (f === d || f === u) {
                     return a
@@ -227,7 +176,7 @@
     <link href="https://soutsob.com/ua" hreflang="ua" rel="alternate"/>
     <link href="https://soutsob.com" hreflang="x-default" rel="alternate"/>
 
-    <title>SOUTSOB | Global Technology</title>
+    <title>SOUTSOB | Blog</title>
     <meta content="At SOUTSOB, we embody a passion for cutting-edge solutions, a commitment to excellence, and a relentless pursuit of customer satisfaction. "
           name="description"/>
     <link href="https://soutsob.com" rel="canonical"/>
@@ -405,63 +354,177 @@
         <div class="container">
             <div class="breadcrumblist">
                 <a href="https://soutsob.com/">SOUTSOB</a>
-                <span class="separator"><svg fill="none" height="10" width="6"><path d="m1 1 3.9 3.9V5L1 9"
-                                                                                     stroke="#787878"/></svg></span>
-                <span class="last-item"><a href="https://soutsob.com/blog">Blog</a></span>
+                <span class="separator"><svg fill="none" height="10" width="6"><path d="m1 1 3.9 3.9V5L1 9" stroke="#787878"/></svg></span>
+                <span class="last-item"><a href="https://soutsob.com/case-studies">Case Studies</a></span>
             </div>
-            <div class="row">
-                <div class="main-info col-xs-12" style="margin-top: 32px;">
-                    <div class="time-wrap mod">
-                        <span itemscope="" itemtype="http://schema.org/CreativeWork"><span class="last-updated"
-                                                                                           datetime="January 09,2025"
-                                                                                           itemprop="dateModified">Updated: January 09,   2025 | </span></span>
-                        <span class="time"> 3 mins read | </span>
-                        <span class="published-date"> Published:  January 7,   2025</span>
-                    </div>
-                    <h1 class="h3 title" itemprop="headline">How AI is Transforming Business Operations</h1>
-                    <p class="subtitle"></p>
-                    <div class="main-info-bottom">
-                    </div>
+        </div>
+        <div class="container content">
+            <div class="row content-inner">
+                <div class="col-lg-9 col-md-10 col-xs-12">
+                    <h1 class="h2 article__title">SOUTSOB Case Studies</h1>
+                </div>
+                <div class="col-lg-7 col-md-6 col-sm-10 col-xs-11 text-block">
+                    <p>Insights. Innovation. Impact.</p>
+                </div>
+                <div class="col-xs-12 btn-wrap">
+                    <a class="btn-clear wow zoomIn" href="https://soutsob.com/contact" title="Contact Us ">Contact
+                        Us </a>
                 </div>
             </div>
-            <div class="post-image"></div>
         </div>
     </section>
+    <section class="blog-section">
+        <div class="container">
+            <h2 class="h3 title">Latest stories</h2>
+            <div class="posts ajax_posts">
+                <div class="row">
+                    <div class="posts__item col-xs-12 col-md-8 fadeInUp wow" style="visibility: visible; animation-name: fadeInUp;">
+                        <div class="posts__item-inner big-post">
+                            <a class="posts__item-image-wrap" href="https://soutsob.com/case-studies/1/index.html">
+                                <img alt="Online Banking Platform Modernization"
+                                     class="posts__item-image lazy loaded"
+                                     data-sizes="(max-width: 659px) 370px,(min-width: 660px) 770px"
+                                     data-src="../../resources/img/cases/1/9.jpg"
+                                     data-srcset="../../resources/img/cases/1/9.jpg" data-was-processed="true"
+                                     height="500"
+                                     sizes="(max-width: 659px) 370px,(min-width: 660px) 770px"
+                                     src="https://soutsob.com/resources/img/blog/1/ai.jpg"
+                                     srcset="https://soutsob.com/resources/img/cases/1/9.jpg"
+                                     width="770">
+                            </a>
+                            <div class="posts__item-text-wrap">
+                                <div class="categories-tag">
+                                    <span class="cat">Crypto</span>
+                                    <span class="cat">Banking</span>
+                                    <span class="cat">AWS</span>
+                                </div>
+                                <a class="posts__item-title" href="https://soutsob.com/case-studies/1/index.html">Online Banking Platform Modernization</a>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-3 col-lg-offset-1 col-xs-12 table-content-wrap">
-                <div class="sticky-content">
-                    <nav class="table-of-content">
-                        <div class="title">Content</div>
-                        <ul class="main-nav">
-                            <li class="item"><a class="link" href="#article-0">Reshaping business operations</a></li>
-                            <li class="item"><a class="link" href="#article-1">The cost-saving potential</a></li>
-                            <li class="item"><a class="link" href="#article-2">2024 Results</a></li>
-                        </ul>
-                    </nav>
+                                <a class="link" href="https://soutsob.com/case-studies/1/index.html">
+                                    <span class="screen-reader-text">Online Banking Platform Modernization</span>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="posts__item col-xs-12 col-sm-6 col-md-4 fadeInUp wow" style="visibility: visible; animation-name: fadeInUp;">
+                        <div class="posts__item-inner ">
+                            <a class="posts__item-image-wrap" href="https://soutsob.com/case-studies/2/index.html">
+                                <img alt="Enterprise Data Protection Solution for On-Premises Servers"
+                                     class="posts__item-image lazy loaded"
+                                     data-sizes="(max-width: 659px) 310px,(min-width: 660px) 370px"
+                                     data-src="https://soutsob.com/resources/img/cases/2/2.jpg"
+                                     data-srcset="https://soutsob.com/resources/img/cases/2/2.jpg" data-was-processed="true"
+                                     height="240"
+                                     sizes="(max-width: 659px) 310px,(min-width: 660px) 370px"
+                                     src="https://soutsob.com/resources/img/cases/2/2.jpg"
+                                     srcset="https://soutsob.com/resources/img/cases/2/2.jpg 310w,https://soutsob.com/resources/img/cases/2/2.jpg 370w"
+                                     width="370">
+                            </a>
+                            <div class="posts__item-text-wrap">
+                                <div class="categories-tag">
+                                    <span class="cat">Data Protection</span>
+                                    <span class="cat">Microsoft Azure</span>
+                                    <span class="cat">Java</span>
+                                    <span class="cat">Scala</span>
+                                </div>
+                                <a class="posts__item-title" href="https://soutsob.com/case-studies/2/index.html">Enterprise Data Protection Solution for On-Premises Servers</a>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="posts__item col-xs-12 col-sm-6 col-md-4 fadeInUp wow"
+                         style="visibility: visible; animation-name: fadeInUp;">
+                        <div class="posts__item-inner ">
+                            <a class="posts__item-image-wrap" href="https://soutsob.com/case-studies/3/index.html">
+                                <img alt="The Business Value of Solid System Architecture"
+                                     class="posts__item-image lazy loaded"
+                                     data-sizes="(max-width: 659px) 310px,(min-width: 660px) 370px"
+                                     data-src="https://soutsob.com/resources/img/cases/3/3.jpg" data-srcset="https://soutsob.com/resources/img/cases/3/3.jpg 310w,https://soutsob.com/resources/img/cases/3/3.jpg 370w"
+                                     data-was-processed="true"
+                                     height="240"
+                                     sizes="(max-width: 659px) 310px,(min-width: 660px) 370px"
+                                     src="https://soutsob.com/resources/img/cases/3/3.jpg"
+                                     srcset="https://soutsob.com/resources/img/blog/7/7.jpg 310w,https://soutsob.com/resources/img/cases/3/3.jpg 370w"
+                                     width="370">
+                            </a>
+                            <div class="posts__item-text-wrap">
+                                <div class="categories-tag">
+                                    <span class="cat">Digital Assets</span>
+                                    <span class="cat">Google Cloud Platform</span>
+                                    <span class="cat">Java</span>
+                                </div>
+                                <a class="posts__item-title" href="https://soutsob.com/case-studies/3/index.html">Enterprise Digital Assets Management</a>
+
+                                <a class="link" href="https://soutsob.com/case-studies/3/index.html">
+                                    <span class="screen-reader-text">Enterprise Digital Assets Management</span>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="posts__item col-xs-12 col-sm-6 col-md-4 fadeInUp wow"
+                         style="visibility: visible; animation-name: fadeInUp;">
+                        <div class="posts__item-inner ">
+                            <a class="posts__item-image-wrap" href="https://soutsob.com/case-studies/4/index.html">
+                                <img alt="Automated Batch Data Ingestion & Processing System"
+                                     class="posts__item-image lazy loaded"
+                                     data-sizes="(max-width: 659px) 310px,(min-width: 660px) 370px"
+                                     data-src="https://soutsob.com/resources/img/cases/4/4.jpg" data-srcset="https://soutsob.com/resources/img/cases/4/4.jpg 310w,https://soutsob.com/resources/img/cases/4/4.jpg 370w"
+                                     data-was-processed="true"
+                                     height="240"
+                                     sizes="(max-width: 659px) 310px,(min-width: 660px) 370px"
+                                     src="https://soutsob.com/resources/img/cases/4/4.jpg"
+                                     srcset="https://soutsob.com/resources/img/cases/4/4.jpg 310w,https://soutsob.com/resources/img/cases/4/4.jpg 370w"
+                                     width="370">
+                            </a>
+                            <div class="posts__item-text-wrap">
+                                <div class="categories-tag"><span class="cat">Data Ingestion & Processing</span><span
+                                        class="cat">AWS</span><span
+                                        class="cat">Java</span></div>
+                                <a class="posts__item-title" href="https://soutsob.com/case-studies/4/index.html">Automated Batch Data Ingestion & Processing System</a>
+
+                                <a class="link" href="https://soutsob.com/case-studies/4/index.html">
+                                    <span class="screen-reader-text">Automated Batch Data Ingestion & Processing System</span>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="posts__item col-xs-12 col-sm-6 col-md-4 fadeInUp wow" style="visibility: visible; animation-name: fadeInUp;">
+                        <div class="posts__item-inner ">
+                            <a class="posts__item-image-wrap" href="https://soutsob.com/case-studies/5/index.html">
+                                <img alt="Website Design & Development for Interior Design Agency"
+                                     class="posts__item-image lazy loaded"
+                                     data-sizes="(max-width: 659px) 310px,(min-width: 660px) 370px"
+                                     data-src="https://soutsob.com/resources/img/cases/5/5.jpg"
+                                     data-srcset="https://soutsob.com/resources/img/cases/5/5.jpg 310w,https://soutsob.com/resources/img/cases/5/5.jpg 370w" data-was-processed="true"
+                                     height="240"
+                                     sizes="(max-width: 659px) 310px,(min-width: 660px) 370px"
+                                     src="https://soutsob.com/resources/img/cases/5/5.jpg"
+                                     srcset="https://soutsob.com/resources/img/cases/5/5.jpg 310w,https://soutsob.com/resources/img/cases/5/5.jpg 370w"
+                                     width="370">
+                            </a>
+                            <div class="posts__item-text-wrap">
+                                <div class="categories-tag">
+                                    <span class="cat">AI Tools</span>
+                                    <span class="cat">DevOps</span>
+                                    <span class="cat">Software Engineering</span>
+                                </div>
+                                <a class="posts__item-title" href="https://soutsob.com/case-studies/5/index.html">Website Design & Development for Interior Design Agency</a>
+                            </div>
+
+                        </div>
+                    </div>
                 </div>
             </div>
-            <article class="blog-article text-block col-lg-8 col-xs-12">
-                <h2 class="anchor" id="article-0">Reshaping business operations</h2>
-                <p>Artificial Intelligence (AI) is rapidly reshaping business operations, driving efficiency and innovation across various industries. A recent survey indicates that 77% of companies are either using or exploring AI applications within their operations, highlighting AI's growing significance in the corporate world.</p>
-                <p>By implementing AI-driven tools, companies can optimise processes like customer service, supply chain management, and financial forecasting. For example, AI-powered chatbots enhance customer interactions by providing instant support, while predictive analytics enable data-driven decisions that foster growth. Notably, 56% of businesses are utilising AI to improve and perfect their operations, underscoring AI's role in enhancing efficiency.</p>
-                <h2 class="anchor" id="article-1">The cost-saving potential</h2>
-                <p>The cost-saving potential of AI is significant, especially for small and medium-sized enterprises (SMEs). AI tools reduce the need for manual labor, streamline workflows, and increase productivity, allowing businesses to allocate resources more effectively. In fact, AI is expected to drive a 37% reduction in costs for businesses in 2024, making it a valuable investment for companies aiming to enhance their bottom line</p>
-                <p>AI technology offers significant cost-saving opportunities for businesses across various industries. One primary area where AI reduces costs is through process automation. By automating repetitive and mundane tasks, such as data entry, scheduling, and reporting, businesses can reduce the need for manual labour, cutting payroll expenses and freeing employees to focus on higher-value tasks.</p>
-                <p>AI also helps companies optimise resource allocation, leading to further savings. For example, in logistics and supply chain management, AI-powered predictive analytics can forecast demand patterns, ensuring optimal stock levels and minimising excess inventory. This reduces warehousing costs and prevents financial losses due to overstocking or understocking.</p>
-                <p>Another cost-saving benefit of AI is enhanced energy management. AI systems can analyse energy consumption patterns in real time and adjust usage to avoid waste. Smart building management systems can optimise lighting, heating, and cooling based on occupancy, which is especially beneficial for large commercial spaces where energy bills are significant.</p>
-                <p>AI-driven customer service tools, such as chatbots, further reduce operational costs. Automated virtual assistants can handle routine inquiries, reducing the need for large call centre teams. These tools provide 24/7 service without additional staffing costs, improving both efficiency and customer satisfaction.</p>
-                <p>Lastly, AI helps minimise financial risks through fraud detection and prevention. In industries like finance and insurance, AI algorithms can detect suspicious transactions and flag them for review, reducing the costs associated with fraud losses. Real-time monitoring and predictive analytics also assist in better financial planning, further strengthening the bottom line.</p>
-                <h2 class="anchor" id="article-2">2024 Results</h2>
-                <p>In 2024 and beyond, businesses leveraging AI will be better positioned to adapt to changing market dynamics and gain a competitive edge. Nearly half (49%) of technology leaders report that AI is fully integrated into their companies' core business strategies, reflecting its strategic importance.
-                    PWC
-                    Embracing AI is no longer optional—it's a strategic imperative for sustained growth and innovation.</p>
-                <a class="btn-clear btn-locations" href="https://soutsob.com/contact" title="Contact us">Contact us</a>
-            </article>
+            <div class="btn-clear btn-clear--more" data-ppp="5" id="more_posts">Show more</div>
+            <div class="blog-page-link">
+                <div data-filters="" id="more_posts_filters_data" style="display: none;"></div>
+            </div>
         </div>
-    </div>
-
+    </section>
     <section class="cta">
         <div class="container">
             <div class="row">
@@ -732,8 +795,7 @@ I give consent to the processing of my personal data given in the contact form a
                             <a href="https://clutch.co/profile/soutsob" target="_blank">
                                 <svg class="icon-svg icon-twitter" height="24" viewBox="0 0 18 18" width="24"
                                      xmlns="http://www.w3.org/2000/svg">
-                                    <path clip-rule="evenodd"
-                                          d="M8.56999 11.9105C9.60318 11.9105 10.5446 11.5587 11.2583 10.9223L11.7562 10.4828L14 12.6707L13.4658 13.1648C12.1826 14.347 10.4388 15 8.56899 15C4.54512 15 1.5 11.9651 1.5 7.95663C1.5 3.9306 4.47355 1 8.56899 1C10.4045 1 12.1292 1.65298 13.4295 2.81761L13.9819 3.31173L11.7734 5.50164L11.2764 5.07769C10.5456 4.44128 9.58503 4.10602 8.56999 4.10602C6.23752 4.10602 4.6187 5.69558 4.6187 7.9732C4.6187 10.2518 6.29195 11.9105 8.56999 11.9105ZM10.8299 8.00929C10.8299 6.71113 9.77051 5.66052 8.46114 5.66052H8.46215C7.15479 5.66052 6.09439 6.71113 6.09339 8.00929C6.09339 9.30549 7.15378 10.3581 8.46114 10.3581C9.77051 10.3581 10.8299 9.30549 10.8299 8.00929Z"
+                                    <path clip-rule="evenodd" d="M8.56999 11.9105C9.60318 11.9105 10.5446 11.5587 11.2583 10.9223L11.7562 10.4828L14 12.6707L13.4658 13.1648C12.1826 14.347 10.4388 15 8.56899 15C4.54512 15 1.5 11.9651 1.5 7.95663C1.5 3.9306 4.47355 1 8.56899 1C10.4045 1 12.1292 1.65298 13.4295 2.81761L13.9819 3.31173L11.7734 5.50164L11.2764 5.07769C10.5456 4.44128 9.58503 4.10602 8.56999 4.10602C6.23752 4.10602 4.6187 5.69558 4.6187 7.9732C4.6187 10.2518 6.29195 11.9105 8.56999 11.9105ZM10.8299 8.00929C10.8299 6.71113 9.77051 5.66052 8.46114 5.66052H8.46215C7.15479 5.66052 6.09439 6.71113 6.09339 8.00929C6.09339 9.30549 7.15378 10.3581 8.46114 10.3581C9.77051 10.3581 10.8299 9.30549 10.8299 8.00929Z"
                                           fill-rule="evenodd"></path>
                                 </svg>
                                 <span class="screen-reader-text">SOUTSOB Clutch</span></a>
@@ -830,29 +892,29 @@ I give consent to the processing of my personal data given in the contact form a
                   id="svg-logo__title"/>
         </symbol>
     </svg>
-    <link as='style' href='../../resources/css/style.css' id='theme-style' onload="this.onload=null;this.rel='stylesheet'"
+    <link as='style' href='../resources/css/style.css' id='theme-style' onload="this.onload=null;this.rel='stylesheet'"
           rel='preload'/>
     <noscript>
-        <link href="../../resources/css/style.css" rel="stylesheet">
+        <link href="../resources/css/style.css" rel="stylesheet">
     </noscript>
-    <link href='../../resources/css/cloud-upd-lp.css' id='cloud-upd-lp-css-css'
+    <link href='../resources/css/cloud-upd-lp.css' id='cloud-upd-lp-css-css'
           media='all' rel='stylesheet'
           type='text/css'/>
     <script defer id="wow-js-js" src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js?ver=1.1.2"
             type="text/javascript"></script>
     <script defer id="jquery-js" src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"
             type="text/javascript"></script>
-    <script defer id="slick-js-js" src="../../resources/js/slick-min.js"
+    <script defer id="slick-js-js" src="../resources/js/slick-min.js"
             type="text/javascript"></script>
-    <script defer id="contact-js-js" src="../../resources/js/contact-min.js"
+    <script defer id="contact-js-js" src="../resources/js/contact-min.js"
             type="text/javascript"></script>
-    <script defer id="theme-script-js" src="../../resources/js/g-min.js"
+    <script defer id="theme-script-js" src="../resources/js/g-min.js"
             type="text/javascript"></script>
-    <script defer id="header-js" src="../../resources/js/h-min.js"
+    <script defer id="header-js" src="../resources/js/h-min.js"
             type="text/javascript"></script>
-    <script defer id="cloud-schema-js-js" src="../../resources/js/cloud-schema.js"
+    <script defer id="cloud-schema-js-js" src="../resources/js/cloud-schema.js"
             type="text/javascript"></script>
-    <script defer id="swv-js" src="../../resources/js/index.js"
+    <script defer id="swv-js" src="../resources/js/index.js"
             type="text/javascript"></script>
 </div>
 <script>window.w3tc_lazyload = 1, window.lazyLoadOptions = {
@@ -866,6 +928,6 @@ I give consent to the processing of my personal data given in the contact form a
         window.dispatchEvent(e)
     }
 }</script>
-<script async src="../../resources/js/lazyload.min.js"></script>
+<script async src="../resources/js/lazyload.min.js"></script>
 </body>
 </html>

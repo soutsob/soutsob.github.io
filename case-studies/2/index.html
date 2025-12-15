@@ -107,7 +107,18 @@
             background-size: cover !important;
             width: 100%;
             height: 380px;
-            background-image: url('../../resources/img/blog/1/ai.jpg') !important;
+            background-image: url('../../resources/img/cases/2/2.jpg') !important;
+        }
+
+        .post-design-image {
+            border-radius: 8px;
+            margin-bottom: 32px;
+            background-size: contain !important; /* fits the whole image */
+            background-repeat: no-repeat;       /* prevents tiling */
+            background-position: center;        /* centers the image */
+            width: 100%;
+            height: 580px;
+            background-image: url('../../resources/img/cases/2/2-d.png') !important;
         }
 
         .table-content-wrap {
@@ -407,21 +418,22 @@
                 <a href="https://soutsob.com/">SOUTSOB</a>
                 <span class="separator"><svg fill="none" height="10" width="6"><path d="m1 1 3.9 3.9V5L1 9"
                                                                                      stroke="#787878"/></svg></span>
-                <span class="last-item"><a href="https://soutsob.com/blog">Blog</a></span>
+                <span class="last-item"><a href="https://soutsob.com/case-studies">Case Studies</a></span>
             </div>
             <div class="row">
                 <div class="main-info col-xs-12" style="margin-top: 32px;">
                     <div class="time-wrap mod">
-                        <span itemscope="" itemtype="http://schema.org/CreativeWork"><span class="last-updated"
-                                                                                           datetime="January 09,2025"
-                                                                                           itemprop="dateModified">Updated: January 09,   2025 | </span></span>
-                        <span class="time"> 3 mins read | </span>
-                        <span class="published-date"> Published:  January 7,   2025</span>
+                        <span itemscope="" itemtype="http://schema.org/CreativeWork">
+                            <span class="last-updated" datetime="January 09,2025" itemprop="dateModified">Data Protection&nbsp;|&nbsp;</span>
+                        </span>
+                        <span class="time"> </span>
+                        <span class="published-date"> Microsoft Azure&nbsp;|&nbsp;</span>
+                        <span class="published-date"> Java&nbsp;|&nbsp;</span>
+                        <span class="published-date"> Scala</span>
                     </div>
-                    <h1 class="h3 title" itemprop="headline">How AI is Transforming Business Operations</h1>
+                    <h1 class="h3 title" itemprop="headline">Enterprise Data Protection Solution for On-Premises Servers</h1>
                     <p class="subtitle"></p>
-                    <div class="main-info-bottom">
-                    </div>
+                    <div class="main-info-bottom"></div>
                 </div>
             </div>
             <div class="post-image"></div>
@@ -435,30 +447,55 @@
                     <nav class="table-of-content">
                         <div class="title">Content</div>
                         <ul class="main-nav">
-                            <li class="item"><a class="link" href="#article-0">Reshaping business operations</a></li>
-                            <li class="item"><a class="link" href="#article-1">The cost-saving potential</a></li>
-                            <li class="item"><a class="link" href="#article-2">2024 Results</a></li>
+                            <li class="item"><a class="link" href="#article-0">Business Challenge</a></li>
+                            <li class="item"><a class="link" href="#article-1">Solution Delivered</a></li>
+                            <li class="item"><a class="link" href="#article-2">Technologies Used</a></li>
                         </ul>
                     </nav>
                 </div>
             </div>
             <article class="blog-article text-block col-lg-8 col-xs-12">
-                <h2 class="anchor" id="article-0">Reshaping business operations</h2>
-                <p>Artificial Intelligence (AI) is rapidly reshaping business operations, driving efficiency and innovation across various industries. A recent survey indicates that 77% of companies are either using or exploring AI applications within their operations, highlighting AI's growing significance in the corporate world.</p>
-                <p>By implementing AI-driven tools, companies can optimise processes like customer service, supply chain management, and financial forecasting. For example, AI-powered chatbots enhance customer interactions by providing instant support, while predictive analytics enable data-driven decisions that foster growth. Notably, 56% of businesses are utilising AI to improve and perfect their operations, underscoring AI's role in enhancing efficiency.</p>
-                <h2 class="anchor" id="article-1">The cost-saving potential</h2>
-                <p>The cost-saving potential of AI is significant, especially for small and medium-sized enterprises (SMEs). AI tools reduce the need for manual labor, streamline workflows, and increase productivity, allowing businesses to allocate resources more effectively. In fact, AI is expected to drive a 37% reduction in costs for businesses in 2024, making it a valuable investment for companies aiming to enhance their bottom line</p>
-                <p>AI technology offers significant cost-saving opportunities for businesses across various industries. One primary area where AI reduces costs is through process automation. By automating repetitive and mundane tasks, such as data entry, scheduling, and reporting, businesses can reduce the need for manual labour, cutting payroll expenses and freeing employees to focus on higher-value tasks.</p>
-                <p>AI also helps companies optimise resource allocation, leading to further savings. For example, in logistics and supply chain management, AI-powered predictive analytics can forecast demand patterns, ensuring optimal stock levels and minimising excess inventory. This reduces warehousing costs and prevents financial losses due to overstocking or understocking.</p>
-                <p>Another cost-saving benefit of AI is enhanced energy management. AI systems can analyse energy consumption patterns in real time and adjust usage to avoid waste. Smart building management systems can optimise lighting, heating, and cooling based on occupancy, which is especially beneficial for large commercial spaces where energy bills are significant.</p>
-                <p>AI-driven customer service tools, such as chatbots, further reduce operational costs. Automated virtual assistants can handle routine inquiries, reducing the need for large call centre teams. These tools provide 24/7 service without additional staffing costs, improving both efficiency and customer satisfaction.</p>
-                <p>Lastly, AI helps minimise financial risks through fraud detection and prevention. In industries like finance and insurance, AI algorithms can detect suspicious transactions and flag them for review, reducing the costs associated with fraud losses. Real-time monitoring and predictive analytics also assist in better financial planning, further strengthening the bottom line.</p>
-                <h2 class="anchor" id="article-2">2024 Results</h2>
-                <p>In 2024 and beyond, businesses leveraging AI will be better positioned to adapt to changing market dynamics and gain a competitive edge. Nearly half (49%) of technology leaders report that AI is fully integrated into their companies' core business strategies, reflecting its strategic importance.
-                    PWC
-                    Embracing AI is no longer optional—it's a strategic imperative for sustained growth and innovation.</p>
+                <h2 class="anchor" id="article-0">Business Challenge</h2>
+                <p>An IT services company aimed to develop a robust data protection solution tailored for on-premises servers. With increasing cyber threats and strict compliance requirements, organizations needed reliable backup, recovery, and monitoring capabilities while keeping sensitive data secure within their own infrastructure.</p>
+                <p>Key challenges included:</p>
+                <ul>
+                    <li>→ Protecting critical on-premises data against loss, corruption, and unauthorized access</li>
+                    <li>→ Enabling real-time monitoring and alerts for data integrity and availability</li>
+                    <li>→ Supporting scalability to handle large volumes of structured and unstructured data</li>
+                    <li>→ Integrating seamlessly with existing server infrastructure and enterprise applications</li>
+                    <li>→ Ensuring compliance with industry regulations and organizational policies</li>
+                </ul>
+
+                <h2 class="anchor" id="article-1">Solution Delivered</h2>
+                <p>We designed and implemented a comprehensive data protection platform combining web and agent-based capabilities to safeguard on-premises servers. The solution allows organizations to monitor, back up, and recover their critical data efficiently and securely.</p>
+                <p>The solution included:</p>
+                <ul>
+                    <li>→ A microservices-based architecture for scalability, reliability, and maintainability</li>
+                    <li>→ AngularJS front-end for web-based monitoring and management of data protection processes</li>
+                    <li>→ Agent-based deployment on servers for local data backup, monitoring, and reporting</li>
+                    <li>→ Integration with Cassandra and Elasticsearch for distributed storage and fast search capabilities</li>
+                    <li>→ Cloud orchestration using Microsoft Azure, Apache Mesos, and Terraform for automation and resource management</li>
+                    <li>→ Real-time event streaming and processing with Apache Kafka and Akka for alerting and monitoring</li>
+                    <li>→ CI/CD pipelines using Jenkins to ensure reliable and automated deployments</li>
+                </ul>
+
+                <br>
+                <p>The platform was designed for extensibility, enabling future integration with additional storage systems, enhanced analytics, and enterprise-wide security policies.</p>
+
+                <div class="post-design-image"></div>
+
+                <h2 class="anchor" id="article-2">Technologies Used</h2>
+                <p>→ Backend: Java, Spring Boot, Spring, Microservices Architecture<br>
+                    → Frontend: AngularJS<br>
+                    → Distributed Storage & Search: Cassandra, Elasticsearch<br>
+                    → Cloud & Orchestration: Microsoft Azure, Apache Mesos, Terraform<br>
+                    → Messaging & Streaming: Apache Kafka, Akka, Scala<br>
+                    → DevOps & CI/CD: Jenkins</p>
+
+                <br>
                 <a class="btn-clear btn-locations" href="https://soutsob.com/contact" title="Contact us">Contact us</a>
             </article>
+
         </div>
     </div>
 
